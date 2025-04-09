@@ -5,31 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    html {
-      /* 스크롤 이동을 부드럽게 */
-      scroll-behavior: smooth;
-    }
-
-    span {
-      color: yellowgreen;
-    }
-
-    div {
-      color: skyblue;
-      background-color: purple;
-    }
-
-    #quiz {
-      color: yellow;
-      background-color: black;
-    }
-
-    .quiz_head {
-      color: white;
-      background-color: skyblue;
-    }
-  </style>
 </head>
 
 <body>
@@ -82,80 +57,6 @@
       </ul>
     </li>
   </ul>
-
-  <!-- anchor (인라인): 페이지를 이동하는 하이퍼링크를 지정 (닻을 내리는 것) -->
-  <!-- traget 속성은 링크된 페이지를 어디에 표시할지 타겟 지정
-   _self: 현재 탭 (기본값)
-   _blank: 새로운 탭 -->
-  <a href="https://www.naver.com">NAVER</a>
-  <a href="https://www.google.com" target="_blank">Google</a>
-  <a href="#">
-    <div>div 태그 링크</div>
-  </a>
-
-  <!-- 임시 태그 -->
-  <!-- #을 넣으면 페이지를 다시 로드하지 않음 -->
-  <a href="#">임시 태그</a>
-  <!-- 해당 #id 영역으로 이동 -->
-  <a href="#intro">Intro</a>
-  <a href="#guide">Guide</a>
-
-  <!-- span (인라인): 글자 영역 구분을 위해 사용 (주로 글자에 스타일 적용할 때) -->
-  <p>
-    <span>동해물</span>과 백두산이 마르고 닳도록
-  </p>
-
-  <!-- span을 div로 바꿔보기 -->
-  <p>
-  <div>동해물</div>과 백두산이 마르고 닳도록
-  </p>
-  <!-- p 태그 안에 블록 요소 불가능 -> 웹 표준 위반
-   a 태그 안에 블록 요소 가능 -> HTML5부터 -->
-
-  <!-- break (인라인): "텍스트"에서 줄바꿈 -->
-  <!-- HTML에서 엔터키로 줄바꿈 하는 것은 공백 1개로 처리됨 -->
-  <p>
-    동해물과 백두산이
-    마르고 닳도록
-  </p>
-  <p>
-    동해물과 백두산이 <br>마르고 닳도록
-  </p>
-
-  <!-- (참고) HTML 특수문자 (HTML Entities) 
-   https://www.w3schools.com/html/html_entities.asp
-   대표적으로 &lt;(less than) &gt;(greater than) 
-   &nbsp;(Non-breaking Space) &copy; 등 -->
-  <!-- 사용예1: HTML에서 공백 처리 -->
-  <p>
-    동해물과 백두산이&nbsp;&nbsp;&nbsp;&nbsp;마르고 닳도록
-  </p>
-  <!-- 사용예2: <div>를 태그가 아닌 그냥 출력하고 싶다면 -->
-  &lt;div&gt;
-  <!-- 사용예3: copyright -->
-  &copy; All Rights Reserved
-
-  <!-- horizontal rule (블록): 수평줄 -->
-  <hr>
-
-  <!-- Quiz -->
-  <!-- style 우선순위 id > class -->
-  <h3 class="quiz_head">Quiz: p, span, br을 이용하여 아래와 같이 출력하기</h3>
-  <p>동해물과 백두산이 마르고 닳도록 <br>하느님이 보우하사 <span id="quiz">우리나라</span> 만세</p>
-  <hr>
-
-  <!-- 임시 태그 이동 테스트 -->
-  <h2 id="intro">Intro</h2>
-  <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium excepturi eum harum consequuntur. Nihil, aspernatur. Beatae in voluptates quibusdam pariatur, sequi eaque recusandae molestiae voluptatum quia iste nostrum minima!</p>
-  <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium excepturi eum harum consequuntur. Nihil, aspernatur. Beatae in voluptates quibusdam pariatur, sequi eaque recusandae molestiae voluptatum quia iste nostrum minima!</p>
-  <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium excepturi eum harum consequuntur. Nihil, aspernatur. Beatae in voluptates quibusdam pariatur, sequi eaque recusandae molestiae voluptatum quia iste nostrum minima!</p>
-  <a href="#home">Home</a>
-
-  <h2 id="guide">Guide</h2>
-  <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium excepturi eum harum consequuntur. Nihil, aspernatur. Beatae in voluptates quibusdam pariatur, sequi eaque recusandae molestiae voluptatum quia iste nostrum minima!</p>
-  <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium excepturi eum harum consequuntur. Nihil, aspernatur. Beatae in voluptates quibusdam pariatur, sequi eaque recusandae molestiae voluptatum quia iste nostrum minima!</p>
-  <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium excepturi eum harum consequuntur. Nihil, aspernatur. Beatae in voluptates quibusdam pariatur, sequi eaque recusandae molestiae voluptatum quia iste nostrum minima!</p>
-  <a href="#home">Home</a>
 
 </body>
 
