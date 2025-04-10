@@ -45,6 +45,21 @@
       color: navy;
     }
 
+  /* Tip! input, button이 반복되는 경우 그 사이를 떨어뜨릴 때 */
+  input {
+    display: block;
+
+  }
+  input + input {
+    margin-top: 10px;
+  }
+  input ~ button {
+    margin-top: 5px;
+  }
+  button + button {
+    margin-left: 19px;
+  }
+
   </style>
 </head>
 
@@ -72,6 +87,13 @@
     <li class="apple">사과</li>
   </ul>
 
+  <!-- Tip! input, button이 반복되는 경우 그 사이를 떨어뜨릴 때 -->
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <button type="button">버튼</button>
+  <button type="button">버튼</button>
+  <button type="button">버튼</button>
 </body>
 
 </html>
