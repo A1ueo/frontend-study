@@ -58,6 +58,7 @@
     /* 
       :first-child (첫번째 자식 요소) 
       :last-child (마지막 자식 요소) 
+      nth-child로 덮어 씌우기가 안됨
     */
     .fruits span:first-child {
       color: red;
@@ -69,6 +70,41 @@
     .fruits h3:last-child {
       color: yellow;
     }
+
+    /* :nth-child(n) (n번째 자식 요소) */
+    .fruits *:nth-child(2) {
+      color: green;
+    }
+    .fruits *:nth-child(2n) {
+      color: blue;
+    }
+    .fruits *:nth-child(even) {
+      color: blue;
+    }
+    .fruits *:nth-child(2n + 1) {
+      color: navy;
+    }
+    .fruits *:nth-child(odd) {
+      color: navy;
+    }
+    .fruits *:nth-child(n + 4) {
+      color: violet;
+    }
+
+    /* Quiz: 자식들 중에 앞에 3개만 선택 */
+    .fruits *:nth-child(-n + 3) {
+      color: magenta;
+    }
+    .fruits *:not(:nth-child(n + 4)) {
+      color: magenta;
+    }
+
+    /* BUG: */
+    /* :not(s) (선택자 s를 제외) */
+    .fruits *:not(span) {
+      font-size: 50px;
+    }
+
 
   </style>
 </head>
