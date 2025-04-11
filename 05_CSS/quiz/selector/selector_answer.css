@@ -9,7 +9,7 @@ header nav ul {
 }
 
 /* 3. 33~40 라인의 5번째 <a>태그의 <img>를 선택하는 선택자를 작성(가상 클래스 선택자 필수) */
-aside a:nth-child(5) img {
+aside#global_aside a:nth-child(5) img {
   border: 2px solid yellow;
 }
 
