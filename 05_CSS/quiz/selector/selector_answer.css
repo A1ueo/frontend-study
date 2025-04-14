@@ -2,7 +2,7 @@
   (중간에 생략 가능한 선택자는 생략해도 무방 */
 
 /* 1. 14 라인의 <img>태그를 선택하는 선택자를 작성 */
-header ul.logo img {
+header .logo img {
   border: 2px solid red;
 }
 
