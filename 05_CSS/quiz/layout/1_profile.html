@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Profile</title>
 
   <style>
     body {
@@ -12,32 +12,42 @@
     }
 
     .profile img {
+      /* (참고) img는 인라인 요소이지만 인라인-블록처럼 동작 */
       width: 200px;
+      background-color: #00808080;
+      /* 요소를 원으로 만들기 */
+      border-radius: 50%;
+      /* 이미지 가운데 정렬하기(2가지) */
+      /* 1) 부모에 text-align: center */
+      /* 2) 가로 길이를 갖는 블록 요소에 margin: 0 auto; */
+      /* display: block;
+      margin: 0 auto */
     }
 
     .title {
+      /* 글자 가운데 정렬 */
       font-size: 50px;
     }
 
     .content {
       font-size: 30px;
-      font-weight: bold;
     }
-
+    /* 일부 글자만 스타일링 */
     .content span {
       color: #ff0000;
+      font-weight: bold;
     }
 
     .box {
       width: 450px;
-      background-color: royalblue;
-      border-radius: 5px;
-      padding: 20px;
-      margin: 0 auto;
-      color: white;
+      background-color: #4169e1;
+      color: #ffffff;
       font-size: 20px;
+      padding: 20px 0;
+      margin: 0 auto;
+      border-radius: 5px;
 
-      box-shadow: 5px 5px #000;
+      box-shadow: 5px 5px #000000;
     }
   </style>
 </head>
@@ -58,7 +68,10 @@
   <!-- div.box -->
   <!-- box shadow -->
   <div class="box">
-    <span>안녕하세요. SJ SONG 입니다. <br>현재 웹 프론트엔드/백엔드 학습중이며 <br>취미는 웹 서핑 입니다.</span>
+    <span>안녕하세요. SJ SONG 입니다.
+      <br>현재 웹 프론트엔드/백엔드 학습중이며
+      <br>취미는 웹 서핑 입니다.
+    </span>
   </div>
 
 </body>
