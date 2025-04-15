@@ -80,11 +80,14 @@
     .history h4 {
       text-align: center;
     }
-
+    
+    /* Quiz flex */
     .nav-container {
-      padding: 0 10px;
+      height: 40px;
+      padding: 10px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
     .nav-container h1:hover {
       cursor:pointer;
@@ -92,11 +95,17 @@
     }
 
     .nav-container .menu {
-      list-style-type: none;
+      list-style: none;
       display: flex;
-      align-items: center;
+
+      /* column-gap: 10px; */
+      /* Flexbox 안에서만! */
     }
-    .menu li + li {
+    /* 메뉴 항목 사이에 간격을 넣는 방법 (2가지)
+      1) margin
+      2) gap (in Flexbox)
+    */
+    .menu .menu-item + .menu-item {
       margin-left: 10px;
     }
     .menu li:hover {
@@ -109,6 +118,10 @@
 <body>
   <nav class="nav-container">
     <h1>Shoes Shop</h1>
+    <!-- 로고와 메뉴 사이를 띄우는 방법 (2가지)
+      1) justify-content: space-between;
+      2) flex-grow: 1;
+    -->
 
     <ul class="menu">
       <li class="menu-item">Product</li>
