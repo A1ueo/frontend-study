@@ -1,0 +1,90 @@
+1. block 요소
+  1) <div> 
+  2) <h1> ~ <h6>
+  3) <p>
+  4) <ul> - <li>
+  5) <hr>
+  6) <form>
+    · action
+    · method
+  7) <table>
+    · <tr> - <td>
+      - colspan
+      - rowspan
+  8) semantic 태그
+    · <header>
+    · <main>
+    · <footer>
+    · <nav>
+    · <section>
+    · <article>
+    · <aside>
+
+2. line 요소
+  1) <span> 
+  2) <a>
+    · href
+    · target
+  3) <img>
+    · src
+    · alt
+    · width
+  4) <input>
+    · type
+      - text
+      - checkbox
+      - radio
+      - button
+      - color
+      - date
+      - datetime-local
+      - time
+      - email
+      - file > multiple
+      - range
+      - password > maxlength, minlength
+    · value
+    · disabled
+    · readonly
+    · placeholder
+      - hidden
+    · autocomplete
+  5) <button>
+  6) <textarea>
+    · cols
+    · rows
+    · spellcheck
+  7) <br>
+  8) <label>
+    · for
+  9) <audio>
+    · controls autoplay loop muted
+    · <source>
+      - src
+      - type
+  10) <iframe>
+    · src
+    · width
+    · height
+    · frameborder
+  11) <select>
+    · <option> - selected
+
+3. 전역 속성
+  1) class
+  2) id
+  3) title
+  4) data-
+  5) hidden
+  6) spellcheck
+  7) style
+
+
+4. 문자 엔티티
+  &nbsp;
+  &lt;
+  &gt;
+  &amp;
+  &quot;
+  &apos;
+  &copy;
