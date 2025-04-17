@@ -24,7 +24,7 @@
       max-width: 700px;
       margin: 0 auto;
     }
-    .div-table {
+    .cart-list {
       background-color: #fff;
       border-radius: 10px;
     }
@@ -40,8 +40,10 @@
     }
     td {
       padding: 0 10px;
+      /* 전체 정렬을 한번에 */
     }
     thead td:first-child {
+      /* 의미: 다른 셀들은 최소폭을 가져가면서 해당 셀은 최대 400px까지 늘어남 */
       width: 400px;
     }
     tbody img {
@@ -53,8 +55,10 @@
     tbody td:nth-child(2) {
       text-align: left;
     }
+    /* 자식 선택자 사용 시 tbody 주의! */
     tbody td:nth-child(n+3){
       text-align: center;
+      /* 전체를 center로 주고 하는게 깔끔하다 */
     }
     tfoot{
       text-align: right;
@@ -62,20 +66,21 @@
     .btn-box {
       padding-top: 20px;
 
+      font-size: 20px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .btn-box a {
-      font-size: 20px;
-    }
-    .btn-box button {
+    .btn {
       background-color: #008000;
       padding: 10px 20px;
 
       color: #fff;
+      /* 브라우저 설정에 상속이 밀림 */
       font-size: 20px;
 
+      outline: none;
       border: none;
       border-radius: 10px;
     }
@@ -84,6 +89,10 @@
       color: #ffffff80;
 
       cursor: pointer;
+    }
+    .btn-box button:active {
+      background-color: #004000;
+      color: #ffffff40;
     }
 
   </style>
@@ -95,39 +104,38 @@
     <!-- max-width: 700px -->
     <div class="inner">
       <h2>장바구니</h2>
-      <div class="div-table">
-        <table class="cart-list">
-          <!-- 한 셀에만 크기 입력 -->
-          <thead>
-            <td colspan="2">ITEM</td>
-            <td>AMOUNT</td>
-            <td>PRICE</td>
-            <td>TOTAL</td>
-          </thead>
-          <tbody>
-            <tr>
-              <td><img src="./images/item1.png" alt="카메라"></td>
-              <td>카메라</td>
-              <td>1</td>
-              <td>100,000</td>
-              <td>100,000</td>
-            </tr>
-            <tr>
-              <td><img src="images/item2.png" alt="신발"></td>
-              <td>신발신발신발</td>
-              <td>2</td>
-              <td>59,000</td>
-              <td>118,000</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <td colspan="5">주문금액 218,000원</td>
-          </tfoot>
-        </table>
-      </div>
+      <table class="cart-list">
+        <!-- thead로 따로 빼지 않아도 tbody 안에서 <tr> - <th>를 사용하면 됨 -->
+        <!-- th 에만 크기 입력 -->
+        <thead>
+          <td colspan="2">ITEM</td>
+          <td>AMOUNT</td>
+          <td>PRICE</td>
+          <td>TOTAL</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="./images/item1.png" alt="카메라"></td>
+            <td>카메라</td>
+            <td>1</td>
+            <td>100,000</td>
+            <td>100,000</td>
+          </tr>
+          <tr>
+            <td><img src="images/item2.png" alt="신발"></td>
+            <td>신발신발신발</td>
+            <td>2</td>
+            <td>59,000</td>
+            <td>118,000</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <td colspan="5">주문금액 218,000원</td>
+        </tfoot>
+      </table>
       <div class="btn-box">
         <a href="#">계속 쇼핑하기</a>
-        <button class="btn-buy">구매하기</button>
+        <button type="button" class="btn">구매하기</button>
       </div>
     </div>
   </div>
