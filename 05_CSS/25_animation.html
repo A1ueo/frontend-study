@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- 구글 머티리얼 아이콘 -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <style>
     .btn {
       padding: 15px 20px;
@@ -22,6 +29,34 @@
     }
     .btn-shake-hard:hover {
       animation: shake-hard 500ms infinite;
+    }
+
+    .material-symbols-outlined {
+      font-size: 100px;
+      cursor: pointer;
+      color: cornflowerblue;
+    }
+    .turn:hover {
+      animation: turn 1000ms forwards 3;
+      /* 애니메이션이 끝났을 때 마지막 상태 유지 */
+      /* animation-fill-mode: forwards; */
+      /* animation-iteration-count: 3; */
+    }
+    .spin {
+      animation: spin 1000ms linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+
+    }
+
+    @keyframes turn {
+      0% {transform: rotate(0deg);}
+      25% {transform: rotate(-15deg);}
+      /* 50% {transform: rotate(15deg);} */
+      100% {transform: rotate(45deg);}
     }
 
     /* css @keyframes Rule: 애니메이션 코드를 설정 */
@@ -77,6 +112,16 @@
     <input type="text" id="age">
     <button type="button" onclick="shakeModal()">등록</button>
   </div>
+
+  <h2>turn 애니메이션 만들기</h2>
+  <span class="material-symbols-outlined turn">add</span>
+
+  <!-- Quiz: 360도 무한히 회전하는 애니메이션 만들기 -->
+  <h2>spin 애니메이션 만들기</h2>
+  <span class="material-symbols-outlined spin">check_circle</span>
+  <!-- 애니메이션 라이브러리 -->
+  <!-- https://animate.style/ -->
+  <h1 class="animate__animated animate__flash animate__slower animate__infinite">An animated element</h1>
 
   <script>
     const modalEl = document.getElementById('modal');
