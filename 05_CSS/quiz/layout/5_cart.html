@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 공통 스타일 */
+    * {
+      box-sizing: border-box;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .cart-background {
+      background-color: skyblue;
+      padding: 30px;
+    }
+    .inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .div-table {
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    thead, tr, tfoot {
+      height: 60px;
+    }
+    tr, tfoot {
+      border-top: 2px solid skyblue;
+    }
+    thead {
+      font-weight: bold;
+      text-align: center;
+    }
+    td {
+      padding: 0 10px;
+    }
+    thead td:first-child {
+      width: 400px;
+    }
+    tbody img {
+      width: 80px;
+    }
+    tbody td:first-child {
+      width: 100px;
+    }
+    tbody td:nth-child(2) {
+      text-align: left;
+    }
+    tbody td:nth-child(n+3){
+      text-align: center;
+    }
+    tfoot{
+      text-align: right;
+    }
+    .btn-box {
+      padding-top: 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-box a {
+      font-size: 20px;
+    }
+    .btn-box button {
+      background-color: #008000;
+      padding: 10px 20px;
+
+      color: #fff;
+      font-size: 20px;
+
+      border: none;
+      border-radius: 10px;
+    }
+    .btn-box button:hover {
+      background-color: #006000;
+      color: #ffffff80;
+
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="cart-background">
+    <!-- 가운데 정렬을 하기 위한 div -->
+    <!-- max-width: 700px -->
+    <div class="inner">
+      <h2>장바구니</h2>
+      <div class="div-table">
+        <table class="cart-list">
+          <!-- 한 셀에만 크기 입력 -->
+          <thead>
+            <td colspan="2">ITEM</td>
+            <td>AMOUNT</td>
+            <td>PRICE</td>
+            <td>TOTAL</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="./images/item1.png" alt="카메라"></td>
+              <td>카메라</td>
+              <td>1</td>
+              <td>100,000</td>
+              <td>100,000</td>
+            </tr>
+            <tr>
+              <td><img src="images/item2.png" alt="신발"></td>
+              <td>신발신발신발</td>
+              <td>2</td>
+              <td>59,000</td>
+              <td>118,000</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <td colspan="5">주문금액 218,000원</td>
+          </tfoot>
+        </table>
+      </div>
+      <div class="btn-box">
+        <a href="#">계속 쇼핑하기</a>
+        <button class="btn-buy">구매하기</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
