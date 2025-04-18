@@ -95,7 +95,7 @@
     document.body.addEventListener('click', handler);
     // 총 3번 재사용
 
-    let noname = null;
+    const noname = null;
     // 함수를 재사용 할 필요가 없으면(1회성) 굳이 이름 붙이지 않고 익명 함수 사용
     document.body.addEventListener('click', noname = function () {
       console.log('1회성 함수!!!');
@@ -120,7 +120,6 @@
     console.log(user.getName());
     // 차이점: 변수에 할당하면 해당 데이터를 재사용 가능, 
     // 할당하지 않으면 필요할 때마다 함수(메소드) 호출이 필요
-
 
   </script>
 </body>
