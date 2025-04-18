@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+    /* 공통 스타일은 최상단에 */
+    .form-input {
+      width: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-login {
+      background-color: #09aa5c;
+      margin-top: 40px;
+    }
+    .btn-join {
+      border: 1px solid #09aa5c;
+      color: #09aa5c;
+      background-color: #fff;
+      margin-top: 10px;
+    }
+
+    .login-background {
+      /* 뷰포트의 높이만큼 가득 채우려면 100%가 아님 주의! */
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      width: 460px;
+      border: 1px solid #e1e3e5;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .login-container .id-box, 
+    .login-container .pw-box {
+      height: 60px;
+      padding: 27px 15px 8px;
+      border: 1px solid #c5ccd2;
+    }
+    .login-container .id-box {
+      border-radius: 8px 8px 0 0;
+    }
+    .login-container .pw-box {
+      border-radius: 0 0 8px 8px;
+      border-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-background">
+    <div class="login-container">
+      <!-- <ul>
+        <li>ID/전화번호</li>
+        <li>일회용 번호</li>
+        <li>QR코드</li>
+      </ul> -->
+      <div class="id-box">
+        <input type="text" id="id" class="form-input">
+        <label for="id" class="text-label">아이디 또는 전화번호</label>
+        <!-- <button type="button"></button> -->
+      </div>
+      <div class="pw-box">
+        <input type="password" id="pw" class="form-input">
+        <label for="pw" class="text-label">비밀번호</label>
+        <span class="material-symbols-outlined icon-eye">visibility</span>
+        <!-- <button type="button"></button> -->
+      </div>
+      <button type="button" class="btn btn-login">로그인</button>
+      <button type="button" class="btn btn-join">회원가입</button>
+    </div>
+  </div>
+</body>
+
+</html>
