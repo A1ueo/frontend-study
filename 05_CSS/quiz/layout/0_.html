@@ -28,6 +28,8 @@
       margin-bottom: 5px;
       display: flex;
       align-items: center;
+
+      position: relative;
     }
     .box label {
       flex: 1;
@@ -106,6 +108,29 @@
       outline: 2px solid #09aa5c;
     }
 
+    #id-placeholder {
+      font-size: 20px;
+      color: #808080;
+      
+      position: absolute;
+      left: 60px;
+    }
+    .box button {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+
+      /* border: none; */
+
+      position: absolute;
+    }
+
+    .input-focused {
+      font-size: 10px !important;
+
+
+      top: 0;
+    }
   </style>
 </head>
 
@@ -114,7 +139,9 @@
     <div class="inner">
       <div class="box">
         <label for="id">ID : </label>
-        <input type="text" id="id" placeholder="아이디">
+        <input type="text" id="id" placeholder="" onfocusout="focusOut()">
+        <div id="id-placeholder">아이디</div>
+        <button type="button" onclick="idInput()"></button>
       </div>
       <div class="box box-pw">
         <label for="pw">PW : </label>
@@ -131,6 +158,20 @@
     </div>
 
   </div>
+
+  <script>
+    const idInputEl = document.getElementById('id');
+    const idPlaceholderEL = document.querySelector('#id-placeholder');
+
+
+    function idInput() {
+      idInputEl.focus();
+      idPlaceholderEL.classList.add('input-focused');
+    }
+    function focusOut() {
+      idPlaceholderEL.classList.remove('input-focused');
+    }
+  </script>
 </body>
 
 </html>
