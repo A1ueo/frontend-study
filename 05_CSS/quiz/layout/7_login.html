@@ -57,6 +57,8 @@
       height: 60px;
       padding: 27px 15px 8px;
       border: 1px solid #c5ccd2;
+
+      position: relative;
     }
     .login-container .id-box {
       border-radius: 8px 8px 0 0;
@@ -65,6 +67,42 @@
       border-radius: 0 0 8px 8px;
       border-top: 0;
     }
+
+    .login-container .text-label {
+      position: absolute;
+      bottom: 18px;
+      left: 15px;
+      color: rgba(0, 0, 0, 0.5);
+
+      transition: 300ms;
+    }
+    /* TODO: css만으로 가능! */
+    .form-input:focus + .text-label {
+      font-size: 12px;
+      bottom: 30px;
+    }
+    /* 개발자 도구로 보면서 조정 */
+    .login-container .icon-eye {
+      position: absolute;
+      bottom: 18px;
+      right: 15px;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    .login-container .icon-eye:hover {
+      color: #000;
+    }
+    .login-container .icon-eye:nth-child(4) {
+      visibility: hidden;
+    }
+    .login-container .icon-eye:nth-child(3):active {
+      visibility: hidden;
+    }
+    .login-container .icon-eye:nth-child(3):active + .icon-eye:nth-child(4) {
+      visibility: visible;
+      color: #000;
+    }
+
   </style>
 </head>
 
@@ -85,6 +123,7 @@
         <input type="password" id="pw" class="form-input">
         <label for="pw" class="text-label">비밀번호</label>
         <span class="material-symbols-outlined icon-eye">visibility</span>
+        <span class="material-symbols-outlined icon-eye">visibility_off</span>
         <!-- <button type="button"></button> -->
       </div>
       <button type="button" class="btn btn-login">로그인</button>
