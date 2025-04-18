@@ -7,7 +7,7 @@ body {
     background-image: url(../images/bg.jpg);
     background-position: center;
     background-size: cover;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 }
 .container {
     padding: 50px 0;
@@ -95,4 +95,14 @@ body {
 
 .container .heroes .hero:nth-child(31) .image { background-image: url("../images/hero31.png"); }
 .container .heroes .hero:nth-child(32) .image { background-image: url("../images/hero32.png"); }
+
+.container .logo {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.container .logo img {
+    /* 부모 요소 가로 너비의 100%, 300px 보다 커질 수 없음 */
+    width: 100%;
+}
 
