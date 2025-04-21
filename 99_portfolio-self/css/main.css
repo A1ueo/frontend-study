@@ -84,6 +84,7 @@ main section {
     animation: float-up 2000ms, fade-in 4000ms;
     text-shadow:-1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
     line-height: 1.3;
+    word-break: break-all;
 }
 
 aside {
