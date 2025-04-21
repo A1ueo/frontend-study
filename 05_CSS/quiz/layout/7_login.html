@@ -68,6 +68,11 @@
       border-top: 0;
     }
 
+    .login-container .id-box.focused, 
+    .login-container .pw-box.focused {
+      border: 2px solid #09aa5c;
+    }    
+
     .login-container .text-label {
       position: absolute;
       bottom: 18px;
@@ -77,14 +82,17 @@
       transition: 300ms;
     }
     /* TODO: css만으로 가능! */
-    .form-input:focus + .text-label {
+    /* .login-container .id-box.on .text-label,
+    .login-container .pw-box.on .text-label,  */
+    .login-container .form-input:focus + .text-label,
+    .login-container .text-label.changed {
       font-size: 12px;
       bottom: 30px;
     }
     /* 개발자 도구로 보면서 조정 */
     .login-container .icon-eye {
       position: absolute;
-      bottom: 18px;
+      bottom: 15px;
       right: 15px;
       cursor: pointer;
       color: rgba(0, 0, 0, 0.5);
@@ -92,7 +100,7 @@
     .login-container .icon-eye:hover {
       color: #000;
     }
-    .login-container .icon-eye:nth-child(4) {
+    /* .login-container .icon-eye:nth-child(4) {
       visibility: hidden;
     }
     .login-container .icon-eye:nth-child(3):active {
@@ -101,7 +109,7 @@
     .login-container .icon-eye:nth-child(3):active + .icon-eye:nth-child(4) {
       visibility: visible;
       color: #000;
-    }
+    } */
 
   </style>
 </head>
@@ -122,14 +130,63 @@
       <div class="pw-box">
         <input type="password" id="pw" class="form-input">
         <label for="pw" class="text-label">비밀번호</label>
-        <span class="material-symbols-outlined icon-eye">visibility</span>
         <span class="material-symbols-outlined icon-eye">visibility_off</span>
+        <!-- <span class="material-symbols-outlined icon-eye">visibility</span> -->
         <!-- <button type="button"></button> -->
       </div>
       <button type="button" class="btn btn-login">로그인</button>
       <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
+
+  <script>
+    const inputEls = document.querySelectorAll('input.form-input');
+    const eyeIcon = document.querySelector('.icon-eye');
+    const pwInput = document.getElementById('pw');
+
+    inputEls.forEach(function (inputEl) {
+      const parentEl = inputEl.parentElement;
+      // console.log(parentEl);
+      inputEl.addEventListener('focus', function () {
+        parentEl.classList.add('focused');
+      });
+      // 포커스 해제(blur)
+      inputEl.addEventListener('blur', function () {
+        parentEl.classList.remove('focused');
+      });
+      // 입력이 되고 나왔을 때
+      inputEl.addEventListener('change', function () {
+        console.log('change 이벤트 발생!');
+        // if (inputEl.value) {
+        //   parentEl.classList.add('on');
+        // }
+        // else {
+        //   parentEl.classList.remove('on');
+        // }
+        if (inputEl.value) {
+          inputEl.nextElementSibling.classList.add('changed');
+        }
+        else {
+          inputEl.nextElementSibling.classList.remove('changed');
+        }
+      });
+      // 입력 될 때마다
+      inputEl.addEventListener('input', function () {
+        console.log('input 이벤트 발생!');
+      });
+    });
+
+    eyeIcon.addEventListener('click', function () {
+      if (pwInput.type === 'password') {
+        pwInput.type = 'text';
+        eyeIcon.textContent = 'visibility';
+      } else {
+        pwInput.type = 'password';
+        eyeIcon.textContent = 'visibility_off';
+      }
+    });
+
+  </script>
 </body>
 
 </html>
