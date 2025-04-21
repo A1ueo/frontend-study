@@ -1,14 +1,19 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-
 body {
     /* font-family: ; */
     color: #333;
 }
-
 a {
     text-decoration: none;
     color: inherit;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
 }
 
 header .inner {
@@ -20,6 +25,7 @@ header .inner {
     display:  flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 
     transition: 2000ms;
 }
@@ -30,11 +36,13 @@ header .inner .logo {
     overflow: hidden;
     margin: 0 20px;
 
-    animation: float-up 2000ms;
+    animation: fade-in 4000ms;
+}
+header .inner .logo img {
+    width: 100%;
 }
 header .inner .center {
     flex: 1;
-
 }
 header .inner .center .bar {
     border: 1px solid;
@@ -44,12 +52,11 @@ header .inner .center .bar {
 
 header .inner nav ul {
     display: flex;
-    flex: 1;
-
 }
 header .inner nav ul li {
     margin: 0 20px;
     font-weight: bold;
+    animation: fade-in 4000ms;
 }
 header .inner nav ul a:hover {
     color: #7FFFD4;
@@ -57,10 +64,38 @@ header .inner nav ul a:hover {
     text-shadow: 0 0 10px #333;
 }
 
+#top {
+    /* width: 100%; */
+    position: absolute;
+    top: 0;
+}
+
+main {
+    margin-top: 100px;
+    /* height: calc(100% - 120px); */
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    animation: float-up 2000ms, fade-in 4000ms;
+}
+main section {
+    max-width: 1200px;
+    font-size: 24px;
+}
+
+aside {
+    position: fixed;
+    text-align: center;
+    bottom: 5%;
+    right: 5%;
+}
+aside:hover {
+    cursor: pointer;
+}
 
 
 @keyframes float-up {
-    0% {transform: translateY(100px);}
+    0% {transform: translateY(400px);}
     100% {transform: translateY(0);}
 }
 
