@@ -9,7 +9,7 @@ a {
     color: inherit;
 }
 #top {
-    position: fixed;
+    position: absolute;
     top: 0;
 }
 
