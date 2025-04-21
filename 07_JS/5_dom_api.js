@@ -1,5 +1,5 @@
 // querySelector('css 선택자')
-// html에서 해당 요소를 검색하여 찾은 첫 번째 요소 하나만 반환
+// html에서 해당 요소를 검색하여 찾은 "첫 번째 요소 하나만" 반환
 // 요소를 찾지 못하면 null을 반환
 
 const boxEl = document.querySelector('.box');
@@ -26,6 +26,16 @@ boxEl.addEventListener('click', function () {
     boxEl.classList.remove('active');
     hasActive = boxEl.classList.contains('active');
     console.log(hasActive);
+
+    // 토글하기
+    // if (boxEl.classList.contains('on')) {
+    //     boxEl.classList.remove('on');
+    // } else {
+    //     boxEl.classList.add('on');
+    // }
+    const toggleBox = boxEl.classList.toggle('on');
+    console.log(toggleBox);
+
 });
 // 활용 예: active라는 클래스에 미리 스타일을 지정하고,
 // 클릭한 특정 요소에 스타일을 적용할 때
