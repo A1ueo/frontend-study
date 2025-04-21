@@ -137,15 +137,17 @@
   <hr>
 
   <script>
-    inputEl = document.getElementById('volume');
-    // inputEl = document.querySelector('#volume');
-    volumeEl = document.getElementById('volume-value');
+    volumeEl = document.getElementById('volume');
+    // volumeEl = document.querySelector('#volume');
+    volumeValueEl = document.getElementById('volume-value');
 
-    console.log(inputEl);
-    volumeEl.textContent = inputEl.value;
-    inputEl.addEventListener('input', function () {
-      volumeEl.textContent = inputEl.value;
-    })
+    console.log(volumeEl);
+    volumeValueEl.textContent = volumeEl.value;
+    volumeEl.addEventListener('input', function () {
+      // TODO: html 태그 안의 값은 변경되지 않았음
+      console.log(volumeEl);
+      volumeValueEl.textContent = volumeEl.value;
+    });
   </script>
 
   <!-- 비밀번호 -->
