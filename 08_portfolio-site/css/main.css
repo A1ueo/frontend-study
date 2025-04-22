@@ -2,6 +2,10 @@
 * {
     box-sizing: border-box;
 }
+html {
+    /* 스크롤 이동을 부드럽게 */
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
@@ -16,7 +20,6 @@ body {
 .font-en {
     font-family: "Open Sans", sans-serif;
 }
-
 a {
     text-decoration: none;
     color: inherit;
@@ -27,6 +30,24 @@ a {
     /* 최대값만 제한=반응형 */
     max-width: 1200px;
     margin: 0 auto;
+}
+.title {
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: #333;
+    margin: 24px auto 0;
+}
+img {
+    /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+    display: block;
 }
 .animate-flash {
     animation: flash 500ms 2;
@@ -111,6 +132,90 @@ header nav ul li a:hover::after {
     color: #9b30ff;
 }
 /* VISUAL */
+/* ABOUT */
+.about {
+    padding: 150px 0;
+}
+.about > .inner {
+    position: relative;
+}
+.about .about__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.about .about__wrapper .about__image {
+    width: 40%;
+}
+.about .about__wrapper .about__image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.about .about__wrapper .about__text {
+    width: 40%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.about .about__wrapper .about__text .slogan{
+    font-size: 35px;
+    font-weight: bold;
+}
+.about .about__wrapper .about__text h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.about .about__wrapper .about__text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.about .about__wrapper .about__text li {
+    line-height: 1.8;
+}
+.about .inner .about__btn {
+    position: absolute;
+    bottom: -30px;
+    right: 30px;
+}
+/* .about .inner .about__btn a {
+    display: flex;
+    align-items: center;
+} */
+.about .inner .about__btn img {
+    display: inline;
+    width: 28px;
+    vertical-align: middle; /* 인라인 요소의 수직 정렬 */
+    margin-right: 10px;
+}
+/* ABOUT */
+/* SKILL */
+.skill {
+    padding: 150px 0;
+    background-color: #000;
+    color: #fff;
+}
+.skill .title::after {
+    background-color: #fff;
+}
+.skill .skill__list {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.skill .skill__list > li div {
+    width: 50px;
+    height: 40px;
+    background-color: #9b30ff;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    transition: 300ms;
+}
+.skill .skill__list > li:hover div {
+    transform: rotate(0);
+}
+/* SKILL */
 
 
 /* 애니메이션 정의는 맨 마지막에 */
