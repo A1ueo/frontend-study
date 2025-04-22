@@ -1,10 +1,14 @@
 // 새로고침 스크롤
-history.scrollRestoration = "manual";
+// history.scrollRestoration = "auto";
 
 // 스크롤하면 플립 추가
-sectionEl = document.querySelector('section');
+const spyEls = document.querySelector('section.scroll-spy');
 
-sectionEl.addEventListener('scroll', function () {
-    console.log('scrolled');
-
-})
+const controller = new ScrollMagic.Controller();
+spyEls.forEach(spyEl => {
+    new ScrollMagic.Scene({
+        triggerElement: spyEl,
+        triggerHook: 0.5
+    }).setClassToggle(spyEl, 'show')
+        .addTo(controller);
+});

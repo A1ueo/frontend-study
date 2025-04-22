@@ -8,6 +8,11 @@ a {
     text-decoration: none;
     color: inherit;
 }
+.title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 #top {
     position: absolute;
@@ -18,6 +23,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 9;
+    box-shadow: 5px 0 10px #000;
 }
 header .inner {
     background-color: #ccc;
@@ -68,13 +74,14 @@ header .inner nav ul a:hover {
 main {
     display: flex;
     justify-content: center;
-}
-main .inner {
-    max-width: 1200px;
-    height: 100vh;
     background-image: url(../image/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+main .inner {
+    max-width: 1200px;
+    width: calc(100vh-120px);
+    background-color: #fff;
 }
 main section {
     padding: 200px 50px 0;
@@ -86,6 +93,22 @@ main section {
     line-height: 1.3;
     word-break: break-all;
 }
+/* main .intro article { animation-delay: 200ms; } */
+
+main .about { animation-delay: 200ms; }
+main .about .about__wrapper{
+    display: flex;
+}
+main .about.scroll-spy {
+    transform: scaleX(-1);
+}
+main .about .profile img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+
 
 aside {
     position: fixed;
