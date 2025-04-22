@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-/* html, body { height: 100%; } */
+html, body { height: 100%; }
 body {
     /* font-family: ; */
     color: #333;
@@ -8,25 +8,24 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
 #top {
     position: absolute;
     top: 0;
 }
-
 header {
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 9;
 }
-
 header .inner {
     background-color: #ccc;
     max-width: 1200px;
     height: 120px;
     border-bottom: 0 solid ;
     margin: 0 auto;
-    display:  flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
@@ -67,19 +66,20 @@ header .inner nav ul a:hover {
 }
 
 main {
-    height: 200%;
     display: flex;
     justify-content: center;
-    background-repeat: no-repeat;
 }
 main .inner {
     max-width: 1200px;
-    height: 100%;
-    padding: 200px 100px;
+    height: 100vh;
     background-image: url(../image/background.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 main section {
+    padding: 200px 50px 0;
+    width: calc(100vh-120px);
+    /* background-color: #fff; */
     font-size: 24px;
     animation: float-up 2000ms, fade-in 4000ms;
     text-shadow:-1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;

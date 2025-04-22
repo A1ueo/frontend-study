@@ -1,10 +1,10 @@
 /* COMMON */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* 상속이 안됨 */
 }
 html {
     /* 스크롤 이동을 부드럽게 */
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* 스크롤은 html 태그에 들어있음 */
 }
 body {
     font-family: "Noto Sans KR", sans-serif;
@@ -195,6 +195,8 @@ header nav ul li a:hover::after {
     padding: 150px 0;
     background-color: #000;
     color: #fff;
+    
+    /* overflow: hidden; */
 }
 .skill .title::after {
     background-color: #fff;
@@ -204,6 +206,31 @@ header nav ul li a:hover::after {
     justify-content: space-evenly;
     text-align: center;
 }
+/* 하위 선택자가 아닌 자식 선택자 쓴 것에 유의! */
+.skill .skill__list > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: 300ms;
+    opacity: 0.1;
+    /* 방법1: position */
+    /* position: relative;
+    top: 100px; */
+    /* 방법2: transform */
+    transform: translateY(100px);
+}
+.skill.show .skill__list > li {
+    /* 포지션을 변경하면 레이아웃을 다시 구성함 */
+    /* top: 0; */
+    transform: translateY(0);
+    opacity: 1;
+}
+.skill.show .skill__list > li:nth-child(1) { transition-delay: 100ms; }
+.skill.show .skill__list > li:nth-child(2) { transition-delay: 200ms; }
+.skill.show .skill__list > li:nth-child(3) { transition-delay: 300ms; }
+.skill.show .skill__list > li:nth-child(4) { transition-delay: 400ms; }
+.skill.show .skill__list > li:nth-child(5) { transition-delay: 500ms; }
 .skill .skill__list > li div {
     width: 50px;
     height: 40px;
@@ -215,6 +242,16 @@ header nav ul li a:hover::after {
 .skill .skill__list > li:hover div {
     transform: rotate(0);
 }
+.skill .skill__list > li div p {
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: -2px;
+}
+.skill .skill__list > li h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0 20px;
+}
 /* SKILL */
 
 
@@ -223,3 +260,4 @@ header nav ul li a:hover::after {
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0; }
 }
+
