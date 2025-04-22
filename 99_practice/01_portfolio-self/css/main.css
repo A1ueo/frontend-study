@@ -14,6 +14,7 @@ a {
     margin-bottom: 20px;
 }
 
+
 #top {
     position: absolute;
     top: 0;
@@ -77,30 +78,53 @@ main {
     background-image: url(../image/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    height: 200vh;
 }
 main .inner {
     max-width: 1200px;
     width: calc(100vh-120px);
     background-color: #fff;
 }
-main section {
+main .intro {
     padding: 200px 50px 0;
     width: calc(100vh-120px);
     /* background-color: #fff; */
     font-size: 24px;
-    animation: float-up 2000ms, fade-in 4000ms;
+    animation: fade-in 4000ms;
     text-shadow:-1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
     line-height: 1.3;
     word-break: break-all;
 }
 /* main .intro article { animation-delay: 200ms; } */
 
-main .about { animation-delay: 200ms; }
+main .about { 
+    /* animation-delay: 200ms;  */
+    position: relative;
+}
+main .about article.scroll-spy {
+    transition: 800ms;
+    transform: perspective(1000px) rotateY(-180deg);
+    backface-visibility: hidden;
+
+}
+main .about article.show {
+    transform: rotateY(0);
+}
+main .about .back.scroll-spy{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    transition: 800ms;
+    transform: perspective(1000px) rotateY(0);
+    backface-visibility: hidden;
+}
+main .about .back.show{
+    transform: rotateY(-180deg);
+}
 main .about .about__wrapper{
     display: flex;
-}
-main .about.scroll-spy {
-    transform: scaleX(-1);
 }
 main .about .profile img {
     width: 100px;
@@ -125,10 +149,10 @@ aside:hover {
 }
 
 
-@keyframes float-up {
-    0% {transform: translateY(400px);}
+/* @keyframes float-up {
+    0% {transform: translateY(100px);}
     100% {transform: translateY(0);}
-}
+} */
 
 @keyframes fill-center {
     0% { transform: scaleX(0);}

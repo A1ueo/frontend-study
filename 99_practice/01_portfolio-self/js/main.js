@@ -2,7 +2,7 @@
 // history.scrollRestoration = "auto";
 
 // 스크롤하면 플립 추가
-const spyEls = document.querySelector('section.scroll-spy');
+const spyEls = document.querySelectorAll('.scroll-spy');
 
 const controller = new ScrollMagic.Controller();
 spyEls.forEach(spyEl => {
