@@ -99,6 +99,7 @@ header nav ul li:hover {
     color: #7FFFD4;
     font-weight: bold;
     text-shadow: 0 0 10px #333;
+    cursor: pointer;
 }
 /* HEADER */
 /* INTRO */

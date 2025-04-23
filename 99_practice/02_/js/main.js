@@ -1,5 +1,15 @@
 history.scrollRestoration = "auto";
 
+// goTo#
+function goTo(params) {
+    header = document.querySelector('header .inner');
+    element = document.querySelector(params);
+    window.scrollTo({
+        top: window.pageYOffset + element.getBoundingClientRect().top - header.offsetHeight,
+        behavior: 'auto'
+    });
+}
+
 // 스크롤 인식
 const spyEls = document.querySelectorAll('section.scroll-spy')
 const controller = new ScrollMagic.Controller();
