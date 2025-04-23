@@ -37,3 +37,74 @@ const swiper = new Swiper('.project .swiper', {
         prevEl: '.project .swiper-button-prev',
     },
 });
+
+// 모달창 띄우기
+const modalBtnList = document.querySelectorAll('.project .btn-modal');
+const modalEl = document.querySelector('#modal');
+const closeBtn = document.querySelector('#modal .btn-close');
+
+const imageModalBtnList = document.querySelectorAll('.project .btn-image');
+const imageModalEl = document.querySelector('#imageModal');
+const imageCloseBtn = document.querySelector('#imageModal .btn-close');
+const imageEl = document.querySelector('#imageModal img');
+
+const swiperEls = document.querySelectorAll('.swiper');
+// const modalBody = document.querySelector('#imageModal .modal-body');
+
+// Quiz: modalBtn 누르면 모달창이 뜨고 closeBtn 누르면 닫히도록 만들기
+// style 속성: js로 css 스타일을 제어할 수 있는 속성
+modalBtnList.forEach((modalBtn, index) => {
+    modalBtn.addEventListener('click', function () {
+        modalEl.style.display = 'flex';
+    })
+});
+function fadeClose(modal) {
+    modal.classList.add('animate-fade-out');
+    setTimeout(function () {
+        modal.style.display = 'none';
+        modal.classList.remove('animate-fade-out');
+    }, 500);
+}
+closeBtn.addEventListener('click', function () {
+    fadeClose(modalEl);
+})
+imageModalBtnList.forEach((imageModalBtn, index) => {
+    imageModalBtn.addEventListener('click', function () {
+        // modalBody.appendChild(swiperEls[index].querySelector('.swiper-wrapper:nth-child(2) img.src'));
+        // imageEl.src = imageModalBtn.dataset.imageSrc;
+        imageEl.src = swiperEls[index].querySelector('.swiper-wrapper .swiper-slide-active img').src;
+        imageModalEl.style.display = 'flex';
+    })
+});
+imageCloseBtn.addEventListener('click', function () {
+    fadeClose(imageModalEl);
+})
+// 추가로 더 해볼만한 것!
+// 모달 바깥 영역 클릭시 닫기
+modalEl.addEventListener('click', function (e) {
+    // console.log(e.target);
+    // console.log(e.currentTarget);
+    fadeClose(modalEl);
+})
+modalEl.querySelector('.modal-content').addEventListener('click', function (e) {
+    e.stopPropagation();
+})
+imageModalEl.addEventListener('click', function (e) {
+    fadeClose(imageModalEl);
+})
+imageModalEl.querySelector('.modal-content').addEventListener('click', function (e) {
+    e.stopPropagation();
+})
+// ESC 키로  => 키보드 이벤트
+document.addEventListener('keydown', function (e) {
+    if (modalEl.style.display === 'flex') {
+        if (e.key === 'Escape') {
+            fadeClose(modalEl);
+        }
+    } else if (imageModalEl.style.display === 'flex') {
+        if (e.key === 'Escape') {
+            fadeClose(imageModalEl);
+        }
+    }
+})
+// fade 애니메이션 넣기
