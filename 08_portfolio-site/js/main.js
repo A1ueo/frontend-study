@@ -81,6 +81,8 @@ imageCloseBtn.addEventListener('click', function () {
 })
 // 추가로 더 해볼만한 것!
 // 모달 바깥 영역 클릭시 닫기
+// ESC 키로  => 키보드 이벤트
+// fade 애니메이션 넣기
 modalEl.addEventListener('click', function (e) {
     // console.log(e.target);
     // console.log(e.currentTarget);
@@ -95,7 +97,6 @@ imageModalEl.addEventListener('click', function (e) {
 imageModalEl.querySelector('.modal-content').addEventListener('click', function (e) {
     e.stopPropagation();
 })
-// ESC 키로  => 키보드 이벤트
 document.addEventListener('keydown', function (e) {
     if (modalEl.style.display === 'flex') {
         if (e.key === 'Escape') {
@@ -107,4 +108,35 @@ document.addEventListener('keydown', function (e) {
         }
     }
 })
-// fade 애니메이션 넣기
+
+// 현재 연도 표시
+// 날짜 정보를 가진 js의 Date 객체를 활용
+console.log(new Date().getFullYear());
+let dateYear = new Date().getFullYear();
+const thisYear = document.querySelector('footer .copyrigt .this-year');
+thisYear.textContent = dateYear;
+
+// 페이지 최상단으로 이동
+const toTop = document.querySelector('#to-top');
+// 페이지에 스크롤 이벤트 감지를 추가!
+// window: 브라우저 창 객체
+window.addEventListener('scroll', function (e) {
+    // console.log(this.window.scrollY); // y축 스크롤 위치
+    // 페이지 스크롤 위치가
+    // 500px을 넘으면 요소를 보이고, 
+    // 500px을 넘지 않으면 요소 숨기기!
+    if (window.scrollY > 500) {
+        toTop.style.opacity = 1;
+        toTop.style.transform = 'translateX(0)';
+    }
+    else {
+        toTop.style.opacity = 0;
+        toTop.style.transform = 'translateX(100px)';
+    }
+    // TODO:
+    setTimeout(function () {
+        toTop.style.opacity = 0;
+        toTop.style.transform = 'translateX(100px)';
+    }, 3000);
+
+})
