@@ -120,6 +120,11 @@ thisYear.textContent = dateYear;
 const toTop = document.querySelector('#to-top');
 // 페이지에 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체
+
+// let topButtonTimer = setTimeout(function () {
+//     toTop.style.opacity = 0;
+//     toTop.style.transform = 'translateX(100px)';
+// }, 3000);
 window.addEventListener('scroll', function (e) {
     // console.log(this.window.scrollY); // y축 스크롤 위치
     // 페이지 스크롤 위치가
@@ -133,10 +138,9 @@ window.addEventListener('scroll', function (e) {
         toTop.style.opacity = 0;
         toTop.style.transform = 'translateX(100px)';
     }
-    // TODO:
-    setTimeout(function () {
-        toTop.style.opacity = 0;
-        toTop.style.transform = 'translateX(100px)';
-    }, 3000);
-
 })
+// TODO: 스크롤 타이머
+// setTimeout(function () {
+//     toTop.style.opacity = 0;
+//     toTop.style.transform = 'translateX(100px)';
+// }, 3000);

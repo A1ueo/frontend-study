@@ -5,13 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sungjae's</title>
-
+  <!-- reset css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <!-- google icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css">
 
+  <!-- ScrollMagic -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="js/main.js"></script>
 </head>
 
@@ -27,10 +32,11 @@
       </div>
       <nav>
         <ul class="font-en">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Skill</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skill</a></li>
+          <li><a href="#archive">Archive</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -70,7 +76,7 @@
   </section>
   <!-- ABOUT -->
   <!-- SKILL -->
-  <section class="skill">
+  <section id="skill" class="skill scroll-spy">
     <div class="inner">
       <div class="title-box">
         <h1 class="title font-en">Skills</h1>
@@ -81,9 +87,9 @@
             <div class="category">Language</div>
             <div class="details">
               <ul>
-                <li class="box-hover">C++</li>
-                <li class="box-hover">Python</li>
-                <li class="box-hover">Java</li>
+                <li class="box-hover" style="transition-delay: 100ms;">C++</li>
+                <li class="box-hover" style="transition-delay: 500ms;">Python</li>
+                <li class="box-hover" style="transition-delay: 350ms;">Java</li>
               </ul>
             </div>
           </li>
@@ -91,9 +97,9 @@
             <div class="category">Frontend</div>
             <div class="details">
               <ul>
-                <li class="box-hover">HTML</li>
-                <li class="box-hover">CSS</li>
-                <li class="box-hover">JavaScript</li>
+                <li class="box-hover" style="transition-delay: 400ms;">HTML</li>
+                <li class="box-hover" style="transition-delay: 300ms;">CSS</li>
+                <li class="box-hover" style="transition-delay: 200ms;">JavaScript</li>
               </ul>
             </div>
           </li>
@@ -101,8 +107,8 @@
             <div class="category">Backend</div>
             <div class="details">
               <ul>
-                <li class="box-hover">Spring</li>
-                <li class="box-hover">Spring Boot</li>
+                <li class="box-hover" style="transition-delay: 450ms;">Spring</li>
+                <li class="box-hover" style="transition-delay: 150ms;">Spring Boot</li>
               </ul>
             </div>
           </li>
@@ -110,7 +116,7 @@
             <div class="category">Dev Ops</div>
             <div class="details">
               <ul>
-                <li class="box-hover">AWS</li>
+                <li class="box-hover" style="transition-delay: 250ms;">AWS</li>
                 <li class="box-hover">Docker</li>
               </ul>
             </div>
@@ -122,7 +128,7 @@
   </section>
   <!-- SKILL -->
   <!-- ARCHIVE -->
-  <section class="archive">
+  <section id="archive" class="archive">
     <div class="inner">
       <div class="title-box">
         <h1 class="title font-en">Archive</h1>
@@ -142,7 +148,7 @@
   </section>
   <!-- ARCHIVE -->
   <!-- PROJECT -->
-  <section class="project">
+  <section id="project" class="project">
     <div class="inner">
       <div class="title-box">
         <h1 class="title font-en">Projects</h1>
@@ -150,7 +156,7 @@
 
       <div class="proj__box">
         <div class="proj__unit box-hover">
-          <div class="proj__title">프로젝트 제목</div>
+          <div class="proj__title box-hover">프로젝트 제목</div>
           <div class="proj__term">0000.00 (팀 프로젝트)</div>
           <div class="proj__content">
             <h3>전체 요약</h3>
@@ -162,7 +168,7 @@
           </div>
         </div>
         <div class="proj__unit box-hover">
-          <div class="proj__title">프로젝트 제목</div>
+          <div class="proj__title box-hover">프로젝트 제목</div>
           <div class="proj__term">0000.00 (개인 프로젝트)</div>
           <div class="proj__content">
             <h3>전체 요약</h3>
@@ -174,7 +180,7 @@
           </div>
         </div>
         <div class="proj__unit box-hover">
-          <div class="proj__title">프로젝트 제목</div>
+          <div class="proj__title box-hover">프로젝트 제목</div>
           <div class="proj__term">0000.00 (개인 프로젝트)</div>
           <div class="proj__content">
             <h3>전체 요약</h3>
@@ -191,12 +197,34 @@
   </section>
   <!-- PROJECT -->
   <!-- CONTACT -->
-  <section class="contact">
+  <section id="contact" class="contact font-en scroll-spy">
     <div class="inner">
-
+      <div class="title-box">
+        <h1 class="title font-en">Contact</h1>
+      </div>
+      <div class="contact__info">
+        <ul>
+          <li>ligerssj@naver.com</li>
+          <li>010-0000-0000</li>
+          <li>blog.naver.com</li>
+        </ul>
+      </div>
+      <div class="contact__sns">
+        <ul>
+          <li><a href="#" target="_blank"><img src="#" alt="블로그"></a></li>
+          <li><a href="#" target="_blank"><img src="#" alt="유튜브"></a></li>
+        </ul>
+      </div>
     </div>
   </section>
   <!-- CONTACT -->
+  <!-- SCROLL TO TOP -->
+  <div id="to-top" class="box-hover">
+    <a href="#">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+  </div>
+  <!-- SCROLL TO TOP -->
 
 
 </body>
