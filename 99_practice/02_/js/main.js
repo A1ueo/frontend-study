@@ -20,9 +20,6 @@ spyEls.forEach(spyEl => {
     }).setClassToggle(spyEl, 'show').addTo(controller);
 })
 
-
-
-
 // 탑버튼
 const toTop = document.querySelector('#to-top');
 window.addEventListener('scroll', function () {
@@ -34,3 +31,21 @@ window.addEventListener('scroll', function () {
         toTop.style.transform = 'translateX(100px)';
     }
 })
+
+// 모바일 메뉴
+const mobileButton = document.querySelector('.btn-hamburger');
+const mobileMenu = document.querySelector('header');
+const menuButtons = document.querySelectorAll('header nav li');
+const body = document.querySelector('body');
+
+mobileButton.addEventListener('click', function () {
+    mobileMenu.classList.toggle('active');
+    body.classList.toggle('scroll-lock');
+})
+
+menuButtons.forEach(menuButton => {
+    menuButton.addEventListener('click', function () {
+        mobileMenu.classList.remove('active');
+        body.classList.remove('scroll-lock');
+    })
+});
