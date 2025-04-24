@@ -467,10 +467,10 @@ footer .appreciate {
 }
 @keyframes wave {
     0% {transform: translateY(0px) rotate(0deg);}
-    10% {transform: translateY(15px) rotate(2deg);}
-    20% {transform: translateY(-10px);}
-    40% {transform: translateY(10px) rotate(-1deg);}
-    60% {transform: translateY(-5px); }
-    80% {transform: translateY(5px) rotate(0deg); }
-    100% {transform: translateY(0px) rotate(0deg); }
+    15% {transform: translateY(10px) rotate(1deg);}
+    30% {transform: translateY(-10px) rotate(-1deg);}
+    45% {transform: translateY(5px) rotate(0.5deg);}
+    60% {transform: translateY(-5px) rotate(-0.5deg);}
+    80% {transform: translateY(2.5px) rotate(0deg);}
+    100% {transform: translateY(0px) rotate(0deg);}
 }
