@@ -12,7 +12,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
-    background-image: url(../image/background.jpg);
+    background-image: url(../images/background.jpg);
     background-size: cover;
     background-position: top;
     /* background-repeat: no-repeat; */
@@ -33,7 +33,7 @@ body {
 }
 .inner .title-box {
     display: inline-block;
-    border-bottom: 1px solid #333;
+    border-bottom: 2px solid #333;
     margin-bottom: 20px;
 }
 a {
@@ -111,7 +111,7 @@ header nav ul li:hover {
     content: '';
     width: 100px;
     height: 2px;
-    background-color: #000;
+    background-color: #333;
     display: block;
     margin: 20px auto;
 }
@@ -225,6 +225,11 @@ header nav ul li:hover {
     padding: 20px;
     margin: 0 auto;
     border-radius: 10px;
+    transition: 300ms;
+}
+.archive .inner .git-box:hover {
+    box-shadow: 1px 1px 5px #fff;
+    transform: scale(1.1) translateY(-10%);
 }
 .archive .inner .git-box:hover .git-text {
     text-shadow: 0 0 10px #000;
@@ -294,6 +299,12 @@ margin-bottom: 10px;
 }
 /* PROJECT */
 /* CONTACT */
+.contact .inner {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
 .contact .inner .contact__info {
     padding: 20px 0;
     font-size: 24px;
@@ -355,7 +366,7 @@ footer .appreciate {
 #to-top {
     width: 42px;
     height: 42px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid #808080;
     color: #808080;
     border-radius: 10px;
