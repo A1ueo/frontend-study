@@ -300,8 +300,8 @@ margin-bottom: 10px;
 /* PROJECT */
 /* CONTACT */
 .contact .inner {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: 2px solid #333;
     border-radius: 10px;
 }
@@ -384,9 +384,21 @@ footer .appreciate {
   }
 /* SCROLL TO TOP */
 
+/* MOBILE */
+@media screen and (max-width: 767px) {
+    
+    .project .inner .proj__box {
+        max-width: 767px;
+        justify-content: center;
+    }
+    .contact {
+        overflow-x: hidden;
+    }
+}
+/* MOBILE */
 
 
-
+/* ANIMATION */
 @keyframes fill-center {
     0% { transform: scaleX(0);}
     100% { transform: scaleX(100%);}
