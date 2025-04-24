@@ -14,6 +14,7 @@ body {
     color: #333;
     background-image: url(../image/background.jpg);
     background-size: cover;
+    background-position: top;
     /* background-repeat: no-repeat; */
     overflow-x: hidden;
 }
@@ -75,7 +76,7 @@ header .logo {
     animation: fade-in 4000ms;
 }
 header .logo img {
-    width: 100%;
+    width: 80px;
 }
 header .inner .center {
     flex: 1;
@@ -120,10 +121,8 @@ header nav ul li:hover {
     text-shadow: 0 0 10px #fff;
     margin: 20px 0
 }
-.intro .inner #next {
-    height: 5px;
-}
 .intro .inner .intro__btn {
+    display: inline-block;
     border: 2px solid #333;
     padding: 10px 20px;
     border-radius: 10px;
@@ -133,6 +132,7 @@ header nav ul li:hover {
     background-color: #333;
     color: #fff;
     font-weight: bold;
+    cursor: pointer;
 }
 /* INTRO */
 /* ABOUT */
@@ -166,22 +166,22 @@ header nav ul li:hover {
     padding: 10px 0;
 }
 .skill .inner .skill-box > ul {
-    margin: 0 auto;
     width: 90%;
     height: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     
 }
 .skill .inner .skill-box > ul > li {
+    height: 45px;
     display: flex;
     font-weight: bold;
     align-items: center;
 }
 .skill .inner .skill-box .category {
     flex: 2;
-    margin: 10px 0;
 }
 .skill .inner .skill-box .details {
     flex: 8;
@@ -284,6 +284,7 @@ margin-bottom: 10px;
     color: #008080;
     border-bottom: 1px solid #008080;
     margin: 2px;
+    font-size: 14px;
 }
 .project .inner .proj__box .proj__unit .proj__content h3 {
     font-weight: bold;
