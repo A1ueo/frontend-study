@@ -99,6 +99,7 @@ header .logo {
 }
 header .logo img {
     width: 80px;
+    cursor: pointer;
 }
 header .inner .center {
     flex: 1;
@@ -118,11 +119,13 @@ header nav ul li {
     padding: 10px 20px;
     font-weight: 700;
 }
-header nav ul li:hover ,
-header nav ul li:hover span {
+header nav ul li:hover {
     color: #7FFFD4;
     font-weight: bold;
     text-shadow: 0 0 10px #333;
+}
+header nav ul li,
+header nav ul li span {
     cursor: pointer;
 }
 header .btn-hamburger {
@@ -157,13 +160,13 @@ header .btn-hamburger .material-symbols-outlined {
     padding: 10px 20px;
     border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 .intro .inner .intro__btn:hover {
     background-color: #333;
     color: #fff;
     font-weight: bold;
     text-shadow: none;
-    cursor: pointer;
 }
 .intro .inner .bg-right {
     text-align: right;
@@ -280,9 +283,9 @@ header .btn-hamburger .material-symbols-outlined {
 .skill.show .inner .skill-box > ul >li:last-child .details ul li:last-child {
     animation: burst-up 1000ms;
 }
-.skill .inner .skill-box .details ul li:hover {
+/* .skill .inner .skill-box .details ul li:hover {
     cursor: default;
-}
+} */
 /* SKILL */
 /* ARCHIVE */
 .archive .inner {
@@ -301,8 +304,8 @@ header .btn-hamburger .material-symbols-outlined {
     border-radius: 10px;
     transition: 300ms;
 }
-.archive .inner .git-box:hover,
-.archive .inner .git-box:hover * {
+.archive .inner .git-box,
+.archive .inner .git-box * {
     cursor: pointer;
 }
 .archive .inner .git-box:hover {
@@ -356,9 +359,9 @@ margin-bottom: 10px;
     padding: 10px 15px;
     z-index: 1;
 }
-.project .inner .proj__box .proj__unit:hover {
+/* .project .inner .proj__box .proj__unit:hover {
     cursor: default;
-}
+} */
 .project .inner .proj__box .proj__unit .proj__title {
     background-color: #FF4030;
     color: #fff;
@@ -388,21 +391,21 @@ margin-bottom: 10px;
     background: #015871;
   }
   
-  .wave {
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
-    position: absolute;
-    top: -198px;
-    width: 6400px;
-    height: 198px;
-    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-    transform: translate3d(0, 0, 0);
-  }
+.wave {
+background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+position: absolute;
+top: -198px;
+width: 6400px;
+height: 198px;
+animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+transform: translate3d(0, 0, 0);
+}
   
-  .wave:nth-of-type(2) {
-    top: -175px;
-    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
-    opacity: 1;
-  }
+.wave:nth-of-type(2) {
+top: -175px;
+animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+opacity: 1;
+}
 /* PROJECT */
 /* CONTACT */
 .contact .inner {
@@ -488,7 +491,10 @@ footer .appreciate {
     transition: 0.5s;
     opacity: 0;
     transform: translateX(100px);
-  }
+}
+#to-top * {
+    cursor: pointer;
+}
 /* SCROLL TO TOP */
 
 /* MOBILE */
