@@ -1,15 +1,5 @@
 history.scrollRestoration = "auto";
 
-
-// document.addEventListener('mousemove', e => {
-//     let mouseX = e.pageX + 5;
-//     let mouseY = e.pageY - 5;
-
-//     let cursor = document.querySelector('.cursor');
-//     cursor.style.left = mouseX + 'px';
-//     cursor.style.left = mouseY + 'px';
-// })
-
 // goTo#
 function goTo(params) {
     header = document.querySelector('header .inner');
@@ -37,11 +27,11 @@ window.addEventListener('scroll', function () {
     if (window.scrollY > 100) {
         toTop.style.opacity = 1;
         toTop.style.transform = 'translateX(0)';
-        aboutEl.classList.add('show')
+        aboutEl.classList.add('show');
     } else {
         toTop.style.opacity = 0;
         toTop.style.transform = 'translateX(100px)';
-        aboutEl.classList.remove('show')
+        aboutEl.classList.remove('show');
     }
 })
 
