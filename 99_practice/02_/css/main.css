@@ -18,6 +18,15 @@ body {
     /* background-repeat: no-repeat; */
     overflow-x: hidden;
 }
+* {
+    cursor: url('../images/cursor.png') 2 2, auto;
+}
+/* .cursor {
+    position: fixed;
+}
+.cursor img {
+    width: 10px;
+} */
 .font-en {
   font-family: "Open Sans", sans-serif;
 }
@@ -153,6 +162,15 @@ header .btn-hamburger .material-symbols-outlined {
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+}
+.intro .inner .bg-right {
+    text-align: right;
+    position: relative;
+    bottom: -50px;
+    right: 5px;
+}
+.intro .inner .copy {
+    transform: scaleY(-1);
 }
 /* INTRO */
 /* ABOUT */

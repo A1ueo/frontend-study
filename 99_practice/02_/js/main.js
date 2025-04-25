@@ -1,5 +1,15 @@
 history.scrollRestoration = "auto";
 
+
+// document.addEventListener('mousemove', e => {
+//     let mouseX = e.pageX + 5;
+//     let mouseY = e.pageY - 5;
+
+//     let cursor = document.querySelector('.cursor');
+//     cursor.style.left = mouseX + 'px';
+//     cursor.style.left = mouseY + 'px';
+// })
+
 // goTo#
 function goTo(params) {
     header = document.querySelector('header .inner');
