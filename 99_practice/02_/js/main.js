@@ -22,13 +22,16 @@ spyEls.forEach(spyEl => {
 
 // 탑버튼
 const toTop = document.querySelector('#to-top');
+const aboutEl = document.querySelector('#about')
 window.addEventListener('scroll', function () {
     if (window.scrollY > 100) {
         toTop.style.opacity = 1;
         toTop.style.transform = 'translateX(0)';
+        aboutEl.classList.add('show')
     } else {
         toTop.style.opacity = 0;
         toTop.style.transform = 'translateX(100px)';
+        aboutEl.classList.remove('show')
     }
 })
 

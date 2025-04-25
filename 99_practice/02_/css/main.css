@@ -175,7 +175,24 @@ header .btn-hamburger .material-symbols-outlined {
     text-align: center;
     font-size: 30px;
     font-weight: 800;
+    letter-spacing: 5px;
+    display: flex;
 }
+.about.show .inner .profile-box .profile-text h2 span {
+    /* font-weight:1000; */
+    animation: text-wave 1.5s ease-in-out;
+    /* animation-iteration-count: 1; */
+}
+.about .inner .profile-box .profile-text h2 span:nth-child(1) {animation-delay: 0.1s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(2) {animation-delay: 0.13s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(3) {animation-delay: 0.16s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(4) {animation-delay: 0.19s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(5) {animation-delay: 0.22s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(6) {animation-delay: 0.25s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(7) {animation-delay: 0.28s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(8) {animation-delay: 0.31s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(9) {animation-delay: 0.34s;}
+.about .inner .profile-box .profile-text h2 span:nth-child(10) {animation-delay: 0.37s;}
 .about .inner .profile-box .profile-text h3 {
     font-size: 20px;
     font-weight: 600;
@@ -502,9 +519,14 @@ footer .appreciate {
     }
 }
 @media screen and (max-width: 480px) {
+    .about .inner .profile-box {
+        column-gap: 20px;
+    }
     .about .inner .profile-box .profile-text h2 {
         text-align: left;
         font-size: 16px;
+        letter-spacing: 1px;
+
     }
     .about .inner .profile-box .profile-text h3 {
         font-size: 15px;
@@ -530,6 +552,11 @@ footer .appreciate {
 @keyframes fade-in {
     0% { opacity: 0;}
     100% { opacity: 1;}
+}
+@keyframes text-wave {
+    0%, 40%, 100% {transform: translateY(0);}
+    20%{transform: translateY(-15px);}
+    60%{transform: translateY(-5px);}
 }
 @keyframes burst-up {
     0% { transform: translateY(300px) rotate(20deg);}
