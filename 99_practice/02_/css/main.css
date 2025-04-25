@@ -55,10 +55,16 @@ img {
     overflow: hidden;
     touch-action: none;
 }
-.show .wave:nth-child(1) {animation: wave 3000ms; animation-delay: 100ms;}
-.show .wave:nth-child(2) {animation: wave 3000ms; animation-delay: 400ms;}
-.show .wave:nth-child(3) {animation: wave 3000ms; animation-delay: 700ms;}
+.content-box {
+    max-width: 90%;
+    margin: 0 auto;
+}
+.show .shake {animation: shake 3000ms; animation-delay: 0ms;}
+/* .show .shake:nth-child(1) {animation: shake 3000ms; animation-delay: 100ms;} */
+.show .shake:nth-child(2) {animation-delay: 300ms;}
+/* .show .shake:nth-child(3) {animation: shake 3000ms; animation-delay: 500ms;} */
 /* COMMON */
+
 /* HEADER */
 header {
     background-color: rgb(150, 150, 150);
@@ -156,6 +162,7 @@ header .btn-hamburger .material-symbols-outlined {
 .about .inner .profile-box {
     display: flex;
     justify-content: center;
+    column-gap: 50px;
 }
 .about .inner .profile-box .profile-image img {
     width: 200px;
@@ -163,13 +170,26 @@ header .btn-hamburger .material-symbols-outlined {
 }
 .about .inner .profile-box .profile-text {
     text-align: left;
-    padding-left: 50px;
+}
+.about .inner .profile-box .profile-text h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+.about .inner .profile-box .profile-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 2;
+}
+.about .inner .profile-box .profile-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
 }
 /* ABOUT */
 /* SKILL */
 .skill .inner {
     background-color: #80ff00;
-    border-radius: 10px;
 }
 .skill .inner .skill-box {
     background-color: lightgreen;
@@ -193,6 +213,7 @@ header .btn-hamburger .material-symbols-outlined {
     display: flex;
     font-weight: bold;
     align-items: center;
+    column-gap: 10px;
 }
 .skill .inner .skill-box .category {
     flex: 2;
@@ -273,6 +294,8 @@ margin-bottom: 10px;
 /* PROJECT */
 .project .inner {
     background-color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 .project .inner .proj__box {
     width: 900px;
@@ -282,12 +305,13 @@ margin-bottom: 10px;
     gap: 20px;
 }
 .project .inner .proj__box .proj__unit {
-    width: 440px;
+    width: calc(50% - 10px);
     border-radius: 10px;
     box-shadow: 1px 1px 5px #333;
     background-color: #fff;
     text-align: left;
     padding: 10px 15px;
+    z-index: 1;
 }
 .project .inner .proj__box .proj__unit:hover {
     cursor: default;
@@ -311,12 +335,37 @@ margin-bottom: 10px;
 .project .inner .proj__box .proj__unit .proj__content li {
     list-style: inside;
 }
+
+.ocean { 
+    height: 5%;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background: #015871;
+  }
+  
+  .wave {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
 /* PROJECT */
 /* CONTACT */
 .contact .inner {
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 2px solid #333;
+    border: 3px solid #333;
     border-radius: 10px;
 }
 .contact .inner .contact__info {
@@ -399,11 +448,14 @@ footer .appreciate {
 /* SCROLL TO TOP */
 
 /* MOBILE */
-@media screen and (max-width: 767px) {
-
-    header .inner {
-        /* padding: 0 30px; */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 26px;
     }
+    .inner .title-box {
+        margin-bottom: 40px;
+    }
+
     header .logo {
     margin: 0 20px;
     }
@@ -412,11 +464,14 @@ footer .appreciate {
         margin: 0 30px;
     }
     header nav {
-        background-color: #e0f7fa;
+        background-color: #fff;
+        margin: auto;
+        border-radius: 0 0 10px 10px;
         position: fixed;
         top: 80px;
         left: 0;
-        width: 100%;
+        right: 0;
+        width: 90%;
         height: 0;
         transition: 1000ms;
         overflow: hidden;
@@ -426,7 +481,7 @@ footer .appreciate {
         box-shadow: none;
     }
     header.active nav {
-        height: 80vh;
+        height: 80%;
         /* height: auto; */
     }
     header nav ul {
@@ -438,13 +493,30 @@ footer .appreciate {
         font-size: 30px;
         text-shadow: 5px 5px 10px #aaa;
     }
-    .project .inner .proj__box {
-        max-width: 767px;
-        justify-content: center;
-    }
 
     .contact {
         overflow: hidden;
+    }
+    .contact .inner {
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .about .inner .profile-box .profile-text h2 {
+        text-align: left;
+        font-size: 16px;
+    }
+    .about .inner .profile-box .profile-text h3 {
+        font-size: 15px;
+    }
+    .about .inner .profile-box .profile-text h4 {
+        font-size: 14px;
+    }
+    .about .inner .profile-box .profile-text ul {
+        font-size: 10px;
+    }
+    .project .inner .proj__box .proj__unit {
+        width: 100%;
     }
 }
 /* MOBILE */
@@ -465,12 +537,27 @@ footer .appreciate {
     80% { transform: translateY(20px) rotate(10deg) ;}
     100% { transform: translateY(0); opacity: 1;}
 }
-@keyframes wave {
-    0% {transform: translateY(0px) rotate(0deg);}
-    15% {transform: translateY(10px) rotate(1deg);}
-    30% {transform: translateY(-10px) rotate(-1deg);}
-    45% {transform: translateY(5px) rotate(0.5deg);}
-    60% {transform: translateY(-5px) rotate(-0.5deg);}
-    80% {transform: translateY(2.5px) rotate(0deg);}
-    100% {transform: translateY(0px) rotate(0deg);}
+@keyframes shake {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(1deg);}
+    40% {transform: rotate(-1deg);}
+    70% {transform: rotate(1deg);}
+    100% {transform: rotate(0deg);}
 }
+
+@keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+  @keyframes swell {
+    0%, 100% {
+      transform: translate3d(0,-25px,0);
+    }
+    50% {
+      transform: translate3d(0,5px,0);
+    }
+  }
