@@ -118,7 +118,8 @@ header nav ul li {
     padding: 10px 20px;
     font-weight: 700;
 }
-header nav ul li:hover {
+header nav ul li:hover ,
+header nav ul li:hover span {
     color: #7FFFD4;
     font-weight: bold;
     text-shadow: 0 0 10px #333;
@@ -135,6 +136,7 @@ header .btn-hamburger .material-symbols-outlined {
 /* INTRO */
 .intro {
     padding-top: 100px;
+    text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
 }
 .intro .inner .title::after {
     content: '';
@@ -147,7 +149,6 @@ header .btn-hamburger .material-symbols-outlined {
 .intro .inner p {
     font-size: 16px;
     font-weight: 600;
-    text-shadow: 0 0 10px #fff;
     margin: 20px 0
 }
 .intro .inner .intro__btn {
@@ -161,6 +162,7 @@ header .btn-hamburger .material-symbols-outlined {
     background-color: #333;
     color: #fff;
     font-weight: bold;
+    text-shadow: none;
     cursor: pointer;
 }
 .intro .inner .bg-right {
@@ -169,8 +171,10 @@ header .btn-hamburger .material-symbols-outlined {
     bottom: -50px;
     right: 5px;
 }
-.intro .inner .copy {
-    transform: scaleY(-1);
+.intro .inner .bg-right a {
+    color: #80C0FF;
+    text-decoration: underline;
+    cursor: pointer;
 }
 /* INTRO */
 /* ABOUT */
@@ -296,6 +300,10 @@ header .btn-hamburger .material-symbols-outlined {
     margin: 0 auto;
     border-radius: 10px;
     transition: 300ms;
+}
+.archive .inner .git-box:hover,
+.archive .inner .git-box:hover * {
+    cursor: pointer;
 }
 .archive .inner .git-box:hover {
     box-shadow: 1px 1px 5px #fff;
@@ -446,6 +454,7 @@ margin-bottom: 10px;
 }
 .contact .inner .contact__sns ul li img {
     width: 80px;
+    cursor: pointer;
 }
 /* CONTACT */
 /* FOOTER */
