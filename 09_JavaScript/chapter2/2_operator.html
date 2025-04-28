@@ -105,6 +105,129 @@
     document.write(result, '<br>');
     result = t1 + (100 + 200) + t4;
     document.write(result, '<br>');
+
+    // 5. 비교 연산자
+    // 데이터를 서료 비교하여 결과값으로 true, false를 반환
+    // >, <, >=, <=, ==(동등), !=(부등), ===(일치), !==(불일치)
+    document.write('<h2>비교 연산자</h2>');
+    result = 10 > 20;
+    document.write(result, '<br>');
+    result = 10 < 20;
+    document.write(result, '<br>');
+    result = 10 <= 20;
+    document.write(result, '<br>');
+    result = 20 == '20'; // 값만 비교
+    document.write(result, '<br>');
+    result = 20 === '20'; // 값과 타입까지 비교(권장)
+    document.write(result, '<br>');
+    result = 10 != 20;
+    document.write(result, '<br>');
+    result = 20 != '20'; // 값만 비교
+    document.write(result, '<br>');
+    result = 20 !== '20'; // 값과 타입까지 비교(권장)
+    document.write(result, '<br>');
+
+    // 6. 논리 연산자
+    // Boolean 값에 대한 논리 비교(AND, OR)를 통해 Boolean 값을 반환
+    // &&(AND): 둘 다 true일 때만 true, 피자 그리고 떡볶이 사와
+    // ||(OR) : 둘 중에 하나라도 true이면 true, 피자 또는 떡볶이 사와
+    // ! (NOT): 부정 연산자, true <=> false
+
+    // (참고) 연산자의 우선순위
+    // 1. ( ) - 헷갈리면 사용 권장
+    // 2. 단항 연산자(++, --, !)
+    // 3. 산술 연산자(+, -, *, /, %)
+    // 4. 비교 연산자(>, <, >=, <=, ==, !=, ===, !==)
+    // 5. 논리 연산자(&&, ||)
+    // 6. 할당(대입) 연산자(=)
+
+    document.write('<h2>논리 연산자</h2>');
+    result = 10 > 20 || 20 >= 30 || 30 > 40;
+    document.write(result, '<br>');
+    result = 10 > 20 || 20 >= 30 || 30 <= 40;
+    document.write(result, '<br>');
+
+    result = 10 <= 20 && 20 >= 30 && 30 <= 40;
+    document.write(result, '<br>');
+    result = 10 <= 20 && 20 <= 30 && 30 <= 40;
+    document.write(result, '<br>');
+
+    result = !(10 > 20);
+    document.write(result, '<br>');
+
+    // (응용) 사이 범위 확인하기
+    // age(나이)가 14세 이상 90세 이하에 속하는지를 확인하는 if문 작성
+    // "이상과 이하"는 범위에 14나 90이 포함된다는 의미
+    const age = 50;
+    // Quiz
+    if (age >= 14 && age <= 90) {
+      console.log(age);
+    }
+
+    // (응용) 바깥 범위 확인하기
+    // age(나이)가 14세 미만 90세 초과에 속하는지를 확인하는 if문 작성
+    // Quiz
+    // 답안은 NOT ! 연산자를 사용한 경우와 사용하지 않은 경우 2가지
+    if (age < 14 || age > 90) {
+      console.log(age);
+    }
+    if (!(age >= 14 && age <= 90)) {
+      console.log(age);
+    }
+
+    // Short-circuit evaluation(단축 평가)
+    // &&(AND): 앞이 falsy면 뒤에건 볼 것도 없고, 앞이 truthy면 뒤로 넘어간다.
+    // (falsy를 찾을 때 까지 넘어간다.)
+    // ||(OR): 앞이 truthy면 뒤에건 볼 것도 없고, 앞이 falsy면 뒤로 넘어간다.
+    // (truthy를 찾을 때까지 넘어간다.)
+    result = 10 > 20 && 30 <= 40; // false && 
+    document.write(result, '<br>');
+
+    result = 10 < 20 || 30 > 40; // true || 
+    document.write(result, '<br>');
+
+    // (응용) 기본값 설정 시 사용
+    // falsy(false로 취급되는 값): false, 0, '', undefined, null, NaN
+    const inputName1 = '';
+    const nickName1 = inputName1 || 'Guest'; // JS 단축 평가 활용
+    document.write(nickName1, '<br>');
+
+    // (참고) null 병합 연산자(ES2020)
+    // nullish(null 계열의 값): null, undefined
+    const inputName2 = null;
+    const nickName2 = inputName2 ?? 'Guest';
+    document.write(nickName2, '<br>');
+
+    // Quiz
+    let aa;
+    let bb = null;
+    let cc = undefined;
+    let dd = 4;
+    let ee = 'five';
+    let ff = aa || bb || cc || dd || ee;
+    // ff에 저장된 값은? 4
+    document.write(ff, '<br>');
+
+    // 7. 조건(삼항) 연산자
+    // 조건에 따라 2개의 값 중 하나를 반환
+    // 조건식 ? 값1 : 값2;
+    document.write('<h2>조건(삼항) 연산자</h2>');
+    result = false ? 'javascript' : 'hello';
+    document.write(result, '<br>');
+
+    const score = 85;
+    // result = score >= 90 ? 'A' : 'B';
+    result = score >= 90 ? 'A' : (score >= 80 ? 'B' : 'C');
+    document.write(result, '<br>');
+
+    // 홀짝 판별기
+    // window.prompt('메세지', '기본값'): 입력을 요청하는 대화 상자
+    // 확인을 누르면 입력값이, 취소를 누르면 null을 반환
+    const number = Number(prompt('숫자를 입력하세요.', '0'));
+    document.write(number, ' ', typeof number, '<br>');
+    result = number % 2 == 0 ? '짝수' : '홀수';
+    document.write(result);
+
   </script>
 </body>
 
