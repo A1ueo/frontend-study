@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <img class="image-1" src="logo_resize.png" alt="이미지1">
+    <button class="resizeBtn-1" type="button">+</button>
+  </div>
+  <hr>
+  <div>
+    <label for="row">가로 : </label>
+    <input type="number" name="" id="row">
+    <label for="column">세로 : </label>
+    <input type="number" name="" id="column">
+    <button class="resizeBtn-2" type="button">변경</button>
+    <img class="image-2" src="logo_resize.png" alt="이미지2">
+  </div>
+
+  <script>
+    const image1 = document.querySelector('.image-1');
+    const resizeButton1 = document.querySelector('.resizeBtn-1');
+    resizeButton1.addEventListener('click', function () {
+      image1.width += 100;
+      // image1.height += 100;
+    })
+    const image2 = document.querySelector('.image-2');
+    const resizeButton2 = document.querySelector('.resizeBtn-2');
+    resizeButton2.addEventListener('click', function () {
+      image2.width = document.querySelector('#row').value;
+      image2.height = document.querySelector('#column').value;
+    })
+
+
+  </script>
+</body>
+
+</html>
