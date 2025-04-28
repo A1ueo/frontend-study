@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 자료형(Data Types)
+    // 크게 1. 원시 타입(primitive type)과 2. 객체 타입(object/reference type)으로 구분
+
+    // 1. 원시 타입(기본 자료형)
+    // - 가볍고 빠르며, 불필요한 메모리 할당 없이 처리됨
+    // - String(문자열), Number(숫자), Boolean(참/거짓), undefined, null, Symbol(ES6차)
+
+    // 1) String(문자열) 
+    // "", '', ``(백틱, ES6차)
+    const name1 = "SJ Song";
+    const name2 = 'SJ Song';
+    document.write(name1, '<br>');
+    document.write(name2, '<br>');
+    // 문자열 안에서 큰 따옴표 또는 작은 따옴표를 사용하려면?
+    const singleQuote = "He is called 'SJ'";
+    const doubleQuote = 'He is called "SJ"';
+    document.write(singleQuote, '<br>');
+    document.write(doubleQuote, '<br>');
+
+    // const singleQuote2 = 'He is called 'SJ'';
+    // const doubleQuote2 = "He is called "SJ"";
+    // 이스케이프 문자(\)를 사용하면 해결
+    // => \ 뒤에 오는 특수문자를 일반 문자로 사용할 수 있게 해줌
+    // 예: \', \", \\
+    const singleQuote2 = 'He is called \'SJ\'';
+    const doubleQuote2 = "He is called \"SJ\"";
+    document.write(singleQuote2, '<br>');
+    document.write(doubleQuote2, '<br>');
+
+    const name = 'SJ';
+    document.write('hello ' + name, '<br>');
+    document.write(`hello ${name}`, '<br>'); // 템플릿 리터럴 문법
+    document.write(`hello ${'name'}`, '<br>');
+    document.write(`hello ${1 + 2}`, '<br>');
+    document.write('<br>');
+
+    // 2) Number(숫자)
+    // 다른 프로그래밍 언어와 달리 숫자 타입에 대한 구분이 없음
+    // 항상 64비트 부동소수점으로 저장됨
+    const num1 = 34.13; // 소수점이 있는 소수
+    const num2 = 34; // 소수점이 없는 정수
+    document.write(num1, '<br>');
+    document.write(num2, '<br>');
+
+    // (참고) 자바스크립트 내장 함수
+    const num3 = Number('500'); // '500' -> 500
+    const num4 = Number('abc'); // NaN(숫자로 변환 불가 시)
+    document.write(num3, '<br>');
+    document.write(num4, '<br>');
+    document.write('<br>');
+
+    // 3) Boolean(논리)
+    // true(참), false(거짓)
+    // 사용 예: 조건식에서 특정 조건이 만족하는지 여부를 판단할 때(그 결과는 true, false로 나타나게 됨)
+    const numX = 5, numY = 5, numZ = 6;
+    document.write(numX === numY, '<br>');
+    document.write(numX === numZ, '<br>');
+    let isOk = true;
+    document.write(isOk, '<br>');
+
+    // (중요) false로 취급되는 값(falsy): 0, null, 
+
+  </script>
+</body>
+
+</html>
