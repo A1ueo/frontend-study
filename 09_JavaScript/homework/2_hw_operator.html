@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <!-- 구슬 놀이 -->
   <div>
     <h1>홀수? 짝수?</h1>
     <div>
@@ -17,7 +18,9 @@
       <div class="bead-box" style="padding-top: 10px; display: flex;"></div>
     </div>
   </div>
+  <!-- 구슬 놀이 -->
   <hr>
+  <!-- 간이 계산기 -->
   <div>
     <h1>계산기</h1>
     <div>
@@ -41,13 +44,29 @@
       </div>
     </div>
   </div>
+  <!-- 간이 계산기 -->
+  <hr>
+  <!-- 동해물과 백두산이 -->
+  <div>
+    <label for="text-area">
+      <h1>문자 누적하기</h1>
+    </label>
+    <div class="text-box">
+      <div>
+        <input type="text" name="" id="text-input">
+        <button type="button" id="btn-text">누적</button>
+      </div>
+      <textarea name="" id="text-area" cols="30" rows="10" readonly style="resize: none;"></textarea>
+    </div>
+  </div>
+  <!-- 동해물과 백두산이 -->
 
   <script>
-    // 구슬
-    btnAdd = document.querySelector('.btn-add-bead');
-    btnOddEven = document.querySelector('.btn-odd-even');
-    btnReset = document.querySelector('.btn-reset');
-    beadBox = document.querySelector('.bead-box');
+    // 구슬 놀이
+    const btnAdd = document.querySelector('.btn-add-bead');
+    const btnOddEven = document.querySelector('.btn-odd-even');
+    const btnReset = document.querySelector('.btn-reset');
+    const beadBox = document.querySelector('.bead-box');
     let count = 0;
 
     btnAdd.addEventListener('click', function () {
@@ -61,19 +80,19 @@
       window.alert(oddEven);
     })
     btnReset.addEventListener('click', function () {
-      beadEls = document.querySelectorAll('.bead-box .bead')
+      const beadEls = document.querySelectorAll('.bead-box .bead')
       beadEls.forEach(beadEl => {
         beadEl.remove();
       });
       count = 0;
     })
-    // 구슬
-    // 계산기
-    firstNumber = document.querySelector('#first-number');
-    secondNumber = document.querySelector('#second-number');
-    btnCalcEls = document.querySelectorAll('.btn-box button');
+    // 구슬 놀이
+    // 간이 계산기
+    const firstNumber = document.querySelector('#first-number');
+    const secondNumber = document.querySelector('#second-number');
+    const btnCalcEls = document.querySelectorAll('.btn-box button');
     btnCalcEls.forEach(btnCalcEl => {
-      let calcResult = document.querySelector('span.result');
+      const calcResult = document.querySelector('span.result');
       let resultNumber;
       btnCalcEl.addEventListener('click', function () {
         switch (btnCalcEl.classList.item(0)) {
@@ -96,7 +115,18 @@
         calcResult.innerHTML = resultNumber;
       });
     })
-    // 계산기
+    // 간이 계산기
+    // 동해물과 백두산이
+    const btnText = document.querySelector('#btn-text');
+    const textInput = document.querySelector('#text-input');
+    const textArea = document.querySelector('#text-area');
+    btnText.addEventListener('click', function () {
+      console.log('text-btn');
+
+      textArea.value += textInput.value + '\n';
+      textInput.value = '';
+    })
+    // 동해물과 백두산이
   </script>
 </body>
 

@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>연산자 최종 복습문제</title>
   <style>
-        #resultDiv{
-            background-color: cornsilk;
-            width: 200px;
-            height: 100px;
-        }
-    </style>
+    #resultDiv {
+      background-color: cornsilk;
+      width: 200px;
+      height: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -30,6 +30,10 @@
   <input type="button" value="1번문제" onclick="addMinus();" />
   <script>
     // 이곳에 코드를 추가하세요.
+    inputNumber = document.querySelector('#num1');
+    function addMinus() {
+      window.alert(inputNumber.value * -1);
+    }
   </script>
   <h2>2. 논리 부정 연산자</h2>
   <h3>
@@ -38,13 +42,14 @@
     <br>alert창에 출력되도록 코드를 추가하세요.
   </h3>
   <p>Hint. changeBool 함수의 매개변수로 논리형 변수를 사용하세요.</p>
-  <input type="radio" name="bool" id="yes" onclick="">
+  <input type="radio" name="bool" id="yes" onclick="changeBool(false);">
   <label for="yes">참</label>
-  <input type="radio" name="bool" id="no" onclick="">
+  <input type="radio" name="bool" id="no" onclick="changeBool(true);">
   <label for="no">거짓</label>
   <script>
     function changeBool(bool) {
       // input type radio의 onclick과 이곳에 코드를 추가하세요.
+      window.alert(bool);
     }
   </script>
   <h2>3. 증감연산자</h2>
@@ -108,6 +113,8 @@
   <script>
     function minusCharacter() {
       // 이곳에 코드를 추가하세요.
+      textArea = document.querySelector("#textLong");
+      textArea.innerHTML = textArea.innerHTML - 1;
     }
   </script>
 </body>
