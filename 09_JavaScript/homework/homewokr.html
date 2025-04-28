@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <form action="">
+      <img class="image-1" src="logo_resize.png" alt="이미지">
+      <button class="resize" type="button">+</button>
+    </form>
+  </div>
+
+  <script>
+    image1 = document.querySelector('.image-1')
+    resizeButton = document.querySelector('.resize');
+    resizeButton.addEventListener('click', function () {
+      image1.width += 100;
+      // image1.height += 100;
+    })
+
+  </script>
+</body>
+
+</html>
