@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1>홀수? 짝수?</h1>
+    <div>
+      <button class="btn-add-bead" type="button">구슬 추가</button>
+      <button class="btn-odd-even" type="button">홀짝</button>
+      <button class="btn-reset" type="button">초기화</button>
+      <div class="bead-box" style="padding-top: 10px; display: flex;"></div>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <h1>계산기</h1>
+    <div>
+      <div>
+        <label for="first-number">첫번째 값 : </label>
+        <input type="number" name="" id="first-number">
+      </div>
+      <div>
+        <label for="second-number">두번째 값 : </label>
+        <input type="number" name="" id="second-number">
+      </div>
+      <div class="btn-box">
+        <button class="btn-add" type="button">+</button>
+        <button class="btn-minus" type="button">-</button>
+        <button class="btn-multiply" type="button">X</button>
+        <button class="btn-division" type="button">/</button>
+        <button class="btn-mod" type="button">%</button>
+      </div>
+      <div>
+        계산 결과 : <span class="result"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 구슬
+    btnAdd = document.querySelector('.btn-add-bead');
+    btnOddEven = document.querySelector('.btn-odd-even');
+    btnReset = document.querySelector('.btn-reset');
+    beadBox = document.querySelector('.bead-box');
+    let count = 0;
+
+    btnAdd.addEventListener('click', function () {
+      const newElement = document.createElement('div');
+      newElement.innerHTML = "<div class='bead' style='background-color: #000; width: 100px; height: 100px; border-radius: 50%;'></div>";
+      beadBox.appendChild(newElement);
+      count++;
+    })
+    btnOddEven.addEventListener('click', function () {
+      const oddEven = count % 2 == 0 ? '짝' : '홀';
+      window.alert(oddEven);
+    })
+    btnReset.addEventListener('click', function () {
+      beadEls = document.querySelectorAll('.bead-box .bead')
+      beadEls.forEach(beadEl => {
+        beadEl.remove();
+      });
+      count = 0;
+    })
+    // 구슬
+    // 계산기
+    firstNumber = document.querySelector('#first-number');
+    secondNumber = document.querySelector('#second-number');
+    btnCalcEls = document.querySelectorAll('.btn-box button');
+    btnCalcEls.forEach(btnCalcEl => {
+      let calcResult = document.querySelector('span.result');
+      let resultNumber;
+      btnCalcEl.addEventListener('click', function () {
+        switch (btnCalcEl.classList.item(0)) {
+          case 'btn-add':
+            resultNumber = Number(firstNumber.value) + Number(secondNumber.value);
+            break;
+          case 'btn-minus':
+            resultNumber = Number(firstNumber.value) - Number(secondNumber.value);
+            break;
+          case 'btn-multiply':
+            resultNumber = Number(firstNumber.value) * Number(secondNumber.value);
+            break;
+          case 'btn-division':
+            resultNumber = Number(firstNumber.value) / Number(secondNumber.value);
+            break;
+          case 'btn-mod':
+            resultNumber = Number(firstNumber.value) % Number(secondNumber.value);
+            break;
+        }
+        calcResult.innerHTML = resultNumber;
+      });
+    })
+    // 계산기
+  </script>
+</body>
+
+</html>
