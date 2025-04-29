@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- <input type="number"> -->
+  <input type="number">
 
   <script>
     // 1번 문제
@@ -17,10 +17,20 @@
 
 
     // 1번 풀이
-    let a, b;
-    a = Number(prompt('숫자를 입력하세요'));
-    b = Number(prompt('숫자를 입력하세요'));
-    document.write(`${a} + ${b} = ${a + b}`);
+    let num1, num2;
+    // num1 = Number(prompt('숫자를 입력하세요'));
+    // num2 = Number(prompt('숫자를 입력하세요'));
+    while (!(num1 = Number(prompt('숫자를 입력하세요1'))));
+    while (!(num2 = Number(prompt('숫자를 입력하세요2'))));
+    document.write(`${num1} + ${num2} = ${num1 + num2}`);
+
+    // (참고) 입력받은 데이터가 문자인 경우 숫자로 바꿀때
+    // 예: number
+    // document.querySelector('input[type="number"]').addEventListener('input', function () {
+    //   console.log(this.value);
+    //   // js에서는 문자열로 저장된다
+    //   console.log(typeof this.value);
+    // }); 
   </script>
 </body>
 
