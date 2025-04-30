@@ -20,6 +20,16 @@
   <button type="button" class="btn-login">로그인</button>
   <hr>
 
+  <!-- *** -->
+  <div>
+    <p>
+      <button type="button" onclick="gallery('PREV')">이전</button>
+      <button type="button" onclick="gallery('NEXT')">다음</button>
+    </p>
+    <p>
+      <img src="images/pic_1.jpg" alt="포토" class="photo">
+    </p>
+  </div>
   <script>
     // 함수
     // 여러 실행 코드들의 묶음(그룹화)
@@ -161,14 +171,32 @@
 
     // 여러 과목의 점수를 입력받아 평균 점수 구하기
     const subjects = ['국어', '영어', '수학'];
-    function testAvg(arrData) {
-      let sum = 0;
-      for (let i = 0; i < arrData.length; i++) {
-        sum += Number(prompt(arrData[i] + ' 점수는?', '0'));
+    // function testAvg(arrData) {
+    //   let sum = 0;
+    //   for (let i = 0; i < arrData.length; i++) {
+    //     sum += Number(prompt(arrData[i] + ' 점수는?', '0'));
+    //   }
+    //   return sum / arrData.length;
+    // }
+    // document.write(`평균 점수는 ${testAvg(subjects)}점 입니다.`, '<br>');
+
+    // Quiz: 이전/다음 버튼으로 이미지를 넘기는 gallery() 함수 만들기
+    // 위 *** 참조
+    // 힌트: img 태그르 가져온 후 src 속성을 이용하거나 HTML 속성을 추가하는
+    // setAttribute() 메소드 이용
+    imgEl = document.querySelector('.photo');
+    let imgCount = 0;
+    function gallery(params) {
+      if (params === 'NEXT') {
+        imgCount = ++imgCount % 8
+        imgEl.setAttribute('src', `images/pic_${imgCount + 1}.jpg`);
       }
-      return sum / arrData.length;
+      else if (params === 'PREV') {
+        imgCount = (--imgCount + 8) % 8
+        imgEl.setAttribute('src', `images/pic_${imgCount + 1}.jpg`);
+      }
     }
-    document.write(`평균 점수는 ${testAvg(subjects)}점 입니다.`, '<br>');
+
   </script>
 </body>
 
