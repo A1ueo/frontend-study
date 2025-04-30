@@ -19,16 +19,19 @@
 
     // 풀이4
     const tall = prompt('키를 입력하세요.');
+    let msg = '놀이기구 이용 가능';
     if (tall >= 150) {
-      document.write('놀이기구 이용 가능', '<br>');
+      // document.write('놀이기구 이용 가능', '<br>');
     } else {
       const ask = confirm('부모님과 함께 왔나요.');
-      if (ask) {
-        document.write('좋은 시간 보내렴~', '<br>');
-      } else {
-        document.write('어른 모시고 다시 오렴~', '<br>');
-      }
+      // if (ask) {
+      //   document.write('좋은 시간 보내렴~', '<br>');
+      // } else {
+      //   document.write('어른 모시고 다시 오렴~', '<br>');
+      // }
+      msg = ask ? '좋은 시간 보내렴~' : '어른 모시고 다시 오렴~';
     }
+    document.write(msg, '<br>');
   </script>
 </head>
 
