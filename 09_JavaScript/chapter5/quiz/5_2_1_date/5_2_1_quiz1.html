@@ -16,11 +16,26 @@
     // 풀이1
     const someday = new Date('2023-02-20T03:12');
     const theYear = someday.getFullYear();
-    const theMonth = someday.getMonth();
+    // (ES2017) padStart(문자열의 총 길이, 추가할 문자): 
+    // 문자열 앞에 지정된 문자를 지정된 길이만큼 추가
+    const theMonth = someday.getMonth() + 1;
+    const strMonth = String(theMonth).padStart(2, 0)
     const theDate = someday.getDate();
+    const strDate = String(theDate).padStart(2, 0)
     const theHours = someday.getHours();
+    const strHours = String(theHours).padStart(2, 0)
     const theMinutes = someday.getMinutes();
-    document.write(`${theYear}년 ${theMonth}월 ${theDate}일 <br>${theHours}시 ${theMinutes}분`, '<br>');
+    const strMinutes = String(theMinutes).padStart(2, 0)
+    const formatted = `${theYear}년 ${strMonth}월 ${strDate}일 <br>${strHours}시 ${strMinutes}분`;
+    document.write(formatted, '<br>');
+
+    // 지역(locale) 별로 변환해주는 메소드
+    document.write(someday.toLocaleString('ko-KR'), '<br>'); // 날짜 + 시간
+    document.write(someday.toLocaleDateString('ko-KR'), '<br>'); // 날짜
+    document.write(someday.toLocaleDateString('en-CA'), '<br>'); // 날짜
+    document.write(someday.toLocaleDateString('en-US'), '<br>'); // 날짜
+    document.write(someday.toLocaleDateString('en-UK'), '<br>'); // 날짜
+    document.write(someday.toLocaleTimeString('ko-KR'), '<br>'); // 시간
 
   </script>
 </head>

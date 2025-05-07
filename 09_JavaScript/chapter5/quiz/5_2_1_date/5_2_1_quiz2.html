@@ -46,28 +46,34 @@
         break;
     }
 
-    // 풀이2-2
+    // 풀이2-1
+    let strDay = '';
     if (theDay === 0) {
-      document.write('SUN', '<br>');
+      strDay = 'SUN';
     }
     else if (theDay === 1) {
-      document.write('MON', '<br>');
+      strDay = 'MON';
     }
     else if (theDay === 2) {
-      document.write('TUE', '<br>');
+      strDay = 'TUE';
     }
     else if (theDay === 3) {
-      document.write('WED', '<br>');
+      strDay = 'WED';
     }
     else if (theDay === 4) {
-      document.write('THU', '<br>');
+      strDay = 'THU';
     }
     else if (theDay === 5) {
-      document.write('FRI', '<br>');
+      strDay = 'FRI';
     }
     else if (theDay === 6) {
-      document.write('SAT', '<br>');
+      strDay = 'SAT';
     }
+    document.write(strDay, '<br>');
+
+    // 풀이2-2
+    const daysList = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    document.write(daysList[theDay], '<br>');
 
 
   </script>
