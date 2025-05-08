@@ -18,10 +18,12 @@
 
     // 풀이5
     for (let i = 0; i < arrLength; i++) {
-      const tmp = Number(prompt('배열에 넣을 데이터를 입력하세요'));
+      const tmp = Number(prompt('배열에 넣을 데이터를 입력하세요', i + 1));
       arr.push(tmp);
     }
-    document.write(`첫 번째 값: ${arr[0]}, 마지막 값: ${arr[arr.length - 1]} <br>`);
+    // document.write(`첫 번째 값: ${arr[0]}, 마지막 값: ${arr[arr.length - 1]} <br>`);
+    if (arr.length > 0)
+      document.write(`첫 번째 값: ${arr.shift()}, 마지막 값: ${arr.pop()} <br>`);
   </script>
 </head>
 
