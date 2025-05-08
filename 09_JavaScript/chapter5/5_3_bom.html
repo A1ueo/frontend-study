@@ -193,7 +193,6 @@
     // Tip! 위치 정보(좌표) 가져오기(위에 ***** 참조)
     // HTML Geolocation API는 사용자의 위치를 찾는 데 사용
     // (참고) 위치정보는 스마트폰과 같이 GPS가 탑재된 기기에서 가장 정확함
-    let lat, long;
     function getLocation() {
       if (navigator.geolocation) {
         // getCurrentPosition(): 사용자의 위치를 반환
@@ -201,10 +200,9 @@
           console.log(position);
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-          lat = latitude;
-          long = longitude;
           alert(`위도: ${latitude}, 경도: ${longitude}`, '<br>');
           console.log(position);
+
           const map = L.map('map', {
             center: [latitude, longitude],
             zoom: 70

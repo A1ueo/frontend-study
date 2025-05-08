@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>1. 랜덤값 출력</h1>
+  <div>
+    <div>
+      <label for="start">시작</label>
+      <input type="text" id="start">
+    </div>
+    <div>
+      <label for="end">종료</label>
+      <input type="text" id="end">
+    </div>
+    <button type="button" onclick="execute()">실행</button>
+  </div>
+  <script>
+    const inputStart = document.getElementById('start');
+    const inputEnd = document.getElementById('end');
+    function execute() {
+      randNum = new Array;
+      for (let i = 0; i < 10; i++) {
+        randNum.push(randInt(inputStart.value, inputEnd.value));
+      }
+      alert(randNum.join(', '));
+    }
+  </script>
+
+  <h1>랜덤 배격색</h1>
+  <button type="button" onclick="randBgColor()">바꾸기</button>
+
+  <script>
+    function randInt(num1, num2) {
+      return Math.floor(Math.random() * (num2 - num1 + 1) + num1);
+    }
+
+    function randBgColor() {
+      const bodyTag = document.querySelector('body');
+      bodyTag.style.backgroundColor = `rgb(${randInt(0, 255)}, ${randInt(0, 255)}, ${randInt(0, 255)})`;
+    }
+  </script>
+</body>
+
+</html>
