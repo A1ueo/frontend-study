@@ -19,10 +19,17 @@
     const result = [];
 
     // 풀이5
-    for (let i = 0; i < str.length; i++) {
-      if (str[i] % 2 == 0)
+    // for (let i = 0; i < str.length; i++) {
+    //   if (str[i] % 2 === 0)
+    //     result.push('-');
+    //   result.push(str[i]);
+    // }
+    // console.log(result);
+    // document.write(result);
+    for (const s of str) {
+      if (s % 2 === 0)
         result.push('-');
-      result.push(str[i]);
+      result.push(s);
     }
     console.log(result);
     document.write(result);
