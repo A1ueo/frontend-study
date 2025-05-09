@@ -9,6 +9,68 @@
 
 <body>
 
+  <script>
+    // 1. for of 루프 (ES6차)
+    // 반복 가능한 객체(iterable)의 값을 반복
+    // 예: Array, String, NodeList 등과 같이 반복 가능한 데이터 구조를 반복할 수 있음
+
+    // for (const element of object) {
+    //   실행코드;
+    // }
+    // object: 반복 가능한 객체
+    // element: 객체 속성의 값이 변수에 할당
+
+    // 1) 배열에 대한 반복
+    const fruits = ['apple', 'banana', 'orange',];
+
+    // 일반적인 for문 사용
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
+    // for of 루프 사용
+    for (const fruit of fruits) {
+      console.log(fruit);
+    }
+    // => index 값이 굳이 필요하지 않을 때는 for of 자주 사용함
+
+    // 2) 문자열에 대한 반복
+    const language = 'JavaScript';
+
+    for (const str of language) {
+      console.log(str);
+    }
+
+    // 3) 객체에 대한 반복
+    // Object 객체는 iterable이 아니다.
+    const car = {
+      maker: 'BMW',
+      color: 'white',
+      year: '2020'
+    };
+
+    // for (const prop of car) { // TypeError: car is not iterable
+    //   console.log(prop);
+    // }
+
+    // Object 객체에 대한 반복은 어떻게 구현할까?
+    console.log(Object.keys(car));
+    for (const key of Object.keys(car)) { // ['maker', 'color', 'year']
+      const value = car[key];
+      console.log(key, value);
+    }
+
+    // (참고) Object.entries(): 객체의 모든 키/값 쌍을 배열로 가져옴
+    console.log(Object.entries(car));
+
+    // (참고) 반복 가능한 객체를 구분하는 법
+    // 반복 가능한 객체: Symbol.iterator가 구현된 객체를 말함
+    // Symbol.iterator 메소드가 있는지 확인
+    // 확인 실습:
+    console.log([1, 2, 3]);
+    console.log(new String('abc'));
+    console.log(new Object());
+
+  </script>
 </body>
 
 </html>
