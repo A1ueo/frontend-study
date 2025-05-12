@@ -20,7 +20,7 @@
     · <article>
     · <aside>
 
-2. line 요소
+2. inline 요소
   1) <span> 
   2) <a>
     · href
