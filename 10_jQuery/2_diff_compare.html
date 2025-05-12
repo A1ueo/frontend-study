@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    ul {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+    }
+    #navigation li {
+      padding: 5px;
+    }
+    #navigation .selected {
+      background-color: red;
+      color: white;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <ul id="navigation">
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+    <li class="selected">jQuery</li>
+    <li>Bootstrap</li>
+  </ul>
+
+  <script>
+    // JavaScript VS jQuery
+    // 1) JavaScript
+    // const liEls = document.querySelectorAll('#navigation > li');
+    // liEls.forEach(liEl => {
+    //   liEl.addEventListener('click', function () {
+    //     const selectedEl = document.querySelector('#navigation > .selected');
+    //     selectedEl.classList.remove('selected');
+    //     // this.classList.add('selected'); // 화살표 함수에서는 this 사용 불가능
+    //     liEl.classList.add('selected');
+    //   })
+    // });
+
+    // 2) jQuery
+    $('#navigation > li').click(function () {
+      $('#navigation li').removeClass('selected');
+      $(this).addClass('selected'); // 화살표 함수에서는 this 사용 불가능
+    });
+  </script>
+</body>
+
+</html>
